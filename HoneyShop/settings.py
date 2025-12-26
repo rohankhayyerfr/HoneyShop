@@ -88,10 +88,12 @@ WSGI_APPLICATION = 'HoneyShop.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
+        default=os.environ.get(
+            'DATABASE_URL',
+            'postgresql://nectardata_user:lEueppOmQD4O5zLB4dKH8HC9dvrCvwig@dpg-d5773263jp1c73app4v0-a.frankfurt-postgres.render.com/nectardata'
+        )
     )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
