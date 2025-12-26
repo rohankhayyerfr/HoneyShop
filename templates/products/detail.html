@@ -284,21 +284,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // استایل واریانت انتخاب شده
         document.querySelectorAll('.variant-btn').forEach(v => {
             v.classList.remove(
-            'border-brand-500',
-            'bg-brand-50',
-            'text-brand-900',
-            'ring-1',
-            'ring-brand-500'
+            'border-brand-500', 'bg-brand-50', 'text-brand-700', 'ring-1', 'ring-brand-500'
         );
-            v.classList.add('bg-white', 'text-gray-700');
+            v.classList.add('border-stone-200', 'text-stone-600');
         });
 
          element.classList.add(
-        'border-brand-500',
-
-        'text-brand-900',
-        'ring-1',
-        'ring-brand-500'
+                'border-brand-500', 'bg-brand-50', 'text-brand-700', 'ring-1', 'ring-brand-500'
+    );   element.classList.remove(
+                'border-stone-200', 'text-stone-600'
     );
     };
 
