@@ -283,20 +283,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // استایل واریانت انتخاب شده
         document.querySelectorAll('.variant-btn').forEach(v => {
-            v.classList.remove('border-brand-500', 'bg-brand-50', 'text-brand-900', 'ring-1', 'ring-brand-500');
+            v.classList.remove(
+            'border-brand-500',
+            'bg-brand-50',
+            'text-brand-900',
+            'ring-1',
+            'ring-brand-500'
+        );
             v.classList.add('bg-white', 'text-gray-700');
         });
 
-        element.classList.add(
+         element.classList.add(
         'border-brand-500',
-        'bg-brand-50',
+
         'text-brand-900',
         'ring-1',
-        'ring-brand-500',
-        'shadow-md',  // کمی سایه برای برجسته شدن
-        'scale-105',  // کمی بزرگتر شدن روی انتخاب
-        'transition-all',
-        'duration-200'
+        'ring-brand-500'
     );
     };
 
