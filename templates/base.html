@@ -1,8 +1,10 @@
+{% load static %}
 {% load i18n %}
+<!doctype html>
 {% get_current_language as LANGUAGE_CODE %}
 {% get_current_language_bidi as LANGUAGE_BIDI %}
 
-<!doctype html>
+
 <html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
 <head>
   <meta charset="UTF-8" />
@@ -12,9 +14,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="canonical" href="{{ request.build_absolute_uri }}">
-  <link rel="alternate" hreflang="fa" href="https://site.com/fa/">
-  <link rel="alternate" hreflang="en" href="https://site.com/en/">
-  <link rel="alternate" hreflang="ar" href="https://site.com/ar/">
+{#  <link rel="alternate" hreflang="fa" href="https://site.com/fa/">#}
+{#  <link rel="alternate" hreflang="en" href="https://site.com/en/">#}
+{#  <link rel="alternate" hreflang="ar" href="https://site.com/ar/">#}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
