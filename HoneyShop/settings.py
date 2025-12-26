@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://honeyshop-h3qt.onrender.com']
+ALLOWED_HOSTS = ['honeyshop-h3qt.onrender.com']
 
 
 # Application definition
