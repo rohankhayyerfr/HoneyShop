@@ -1,0 +1,452 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% trans "عسل و خرمای نکتار | تجربه طعم اصیل طبیعت" %}{% endblock %}</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="canonical" href="{{ request.build_absolute_uri }}">
+  <link rel="alternate" hreflang="fa" href="https://site.com/fa/">
+  <link rel="alternate" hreflang="en" href="https://site.com/en/">
+  <link rel="alternate" hreflang="ar" href="https://site.com/ar/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Inter:wght@300..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&family=Inter:wght@300..800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            fa: ['Vazirmatn', 'ui-sans-serif', 'system-ui'],
+            en: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+          colors: {
+            brand: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              500: '#f59e0b', // Amber/Honey
+              600: '#d97706',
+              800: '#92400e',
+              900: '#451a03',
+            }
+          },
+                    animation: {
+            'fade-in-up': 'fadeInUp 0.5s ease-out',
+            'float': 'float 7s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-15px)' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* تنظیم فونت بر اساس زبان */
+    body.lang-fa { font-family: 'Vazirmatn', sans-serif; }
+    body.lang-ar { font-family: 'Vazirmatn', sans-serif; }
+    body.lang-en { font-family: 'Inter', sans-serif; }
+
+    /* انیمیشن‌های ساده */
+    .fade-in { animation: fadeIn 0.2s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+</head>
+
+<body class="bg-stone-50 text-stone-800 {% block body_class %}{% endblock %} lang-{{ LANGUAGE_CODE }} font-fa relative">
+
+<header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-stone-100 h-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+
+    <div class="flex items-center md:hidden">
+        <button onclick="toggleMenu()" class="p-2 -mr-2 text-stone-600 hover:text-brand-600 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+    </div>
+
+    <a href="/" class="flex-1 md:flex-none text-center md:text-right">
+      <h1 class="text-xl md:text-2xl font-extrabold text-brand-600 tracking-tight">
+        {% trans 'عسل و خرمای نکتار' %}
+      </h1>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-stone-600 mx-6">
+      <a href="{% url 'store:product_list' %}" class="hover:text-brand-600 transition-colors">{% trans 'محصولات' %}</a>
+      <a href="#" class="hover:text-brand-600 transition-colors">{% trans 'مزایا' %}</a>
+      <a href="#" class="hover:text-brand-600 transition-colors">{% trans 'درباره ما' %}</a>
+    </nav>
+
+    <div class="flex items-center gap-2 md:gap-4">
+
+        <div class="hidden md:block relative group">
+            <button onclick="toggleLangMenu()" class="flex items-center gap-1 border border-stone-200 px-2 py-1.5 rounded-lg hover:bg-stone-50 bg-white">
+            <span class="text-base">🌐</span>
+            <span class="text-xs font-bold uppercase text-stone-500">{{ LANGUAGE_CODE }}</span>
+            </button>
+            <div id="langMenu" class="absolute top-full mt-2 w-32 bg-white rounded-xl shadow-xl border border-stone-100 hidden overflow-hidden z-50 ltr:right-0 rtl:left-0">
+                <form id="lang-form" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <input type="hidden" name="language" id="lang-input">
+                    <button type="button" onclick="setLanguage('fa')" class="w-full px-4 py-2 text-start text-sm hover:bg-stone-50">🇮🇷 فارسی</button>
+                    <button type="button" onclick="setLanguage('en')" class="w-full px-4 py-2 text-start text-sm hover:bg-stone-50">🇺🇸 English</button>
+                    <button type="button" onclick="setLanguage('ar')" class="w-full px-4 py-2 text-start text-sm hover:bg-stone-50">🇸🇦 العربیة</button>
+                </form>
+            </div>
+        </div>
+
+        <a href="{% url 'cart:cart_home' %}" class="relative p-2 text-stone-600 hover:text-brand-600 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <span id="cartCount" class="absolute top-0 right-0 bg-brand-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </a>
+
+        <a href="{% url 'accounts:login' %}" class="hidden md:block bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow hover:bg-brand-700 transition">
+            {% trans 'ورود' %}
+        </a>
+    </div>
+  </div>
+</header>
+
+<div id="mobileMenu" class="relative z-[100] hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+
+    <div class="fixed inset-0 bg-stone-900/75 transition-opacity backdrop-blur-sm" onclick="toggleMenu()"></div>
+
+    <div class="fixed inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 rtl:right-0 rtl:left-auto ltr:right-auto ltr:left-0">
+
+                <div class="pointer-events-auto w-screen max-w-xs transform transition ease-in-out duration-300 sm:duration-500 bg-white shadow-2xl h-full flex flex-col">
+
+                    <div class="flex items-center justify-between px-4 py-6 border-b border-stone-100 bg-stone-50">
+                        <h2 class="text-lg font-bold text-brand-600">{% trans 'منوی نکتار' %}</h2>
+                        <button type="button" class="rounded-md text-stone-400 hover:text-stone-500 focus:outline-none" onclick="toggleMenu()">
+                            <span class="sr-only">Close panel</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
+                        <nav class="grid gap-y-4">
+                            <a href="{% url 'accounts:login' %}" onclick="toggleMenu()" class="flex items-center gap-3 p-3 rounded-xl hover:bg-brand-50 text-stone-700 font-medium">
+                                <span>🍯</span> {% trans 'محصولات' %}
+                            </a>
+                            <a href="#" onclick="toggleMenu()" class="flex items-center gap-3 p-3 rounded-xl hover:bg-brand-50 text-stone-700 font-medium">
+                                <span>✨</span> {% trans 'مزایا' %}
+                            </a>
+                            <a href="#" onclick="toggleMenu()" class="flex items-center gap-3 p-3 rounded-xl hover:bg-brand-50 text-stone-700 font-medium">
+                                <span>🏢</span> {% trans 'درباره ما' %}
+                            </a>
+
+                            <div class="border-t border-stone-100 pt-4 mt-2">
+                                <p class="text-xs text-stone-400 mb-2 px-3">{% trans 'تغییر زبان' %}</p>
+                                <div class="flex gap-2 px-3">
+                                    <button onclick="setLanguage('fa')" class="flex-1 border py-2 rounded-lg text-sm hover:border-brand-500 {% if LANGUAGE_CODE == 'fa' %}bg-brand-50 border-brand-500{% endif %}">🇮🇷</button>
+                                    <button onclick="setLanguage('en')" class="flex-1 border py-2 rounded-lg text-sm hover:border-brand-500 {% if LANGUAGE_CODE == 'en' %}bg-brand-50 border-brand-500{% endif %}">🇺🇸</button>
+                                    <button onclick="setLanguage('ar')" class="flex-1 border py-2 rounded-lg text-sm hover:border-brand-500 {% if LANGUAGE_CODE == 'ar' %}bg-brand-50 border-brand-500{% endif %}">🇸🇦</button>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="border-t border-stone-200 px-4 py-6">
+                        <a href="{% url 'accounts:login' %}" class="flex w-full items-center justify-center rounded-xl border border-transparent bg-brand-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-brand-700">
+                            {% trans 'ورود / ثبت‌نام' %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="loginModal" class="fixed inset-0 z-[110] hidden">
+  <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onclick="closeLogin()"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm">
+    <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 relative">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-xl font-bold text-stone-800">{% trans 'ورود به حساب' %}</h3>
+        <button onclick="closeLogin()" class="w-8 h-8 flex items-center justify-center bg-stone-100 rounded-full text-stone-500">✕</button>
+      </div>
+      <div class="space-y-4">
+          <input type="tel" dir="ltr" class="w-full border border-stone-200 bg-stone-50 p-3 rounded-xl focus:border-brand-500 outline-none transition" placeholder="0912..." />
+          <input type="password" dir="ltr" class="w-full border border-stone-200 bg-stone-50 p-3 rounded-xl focus:border-brand-500 outline-none transition" placeholder="******" />
+          <button class="w-full bg-brand-600 text-white py-3 rounded-xl font-bold shadow-lg shadow-brand-500/30">{% trans 'ورود' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="cartDrawer" class="relative z-[100] hidden">
+    <div class="fixed inset-0 bg-stone-900/75 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+    <div class="fixed inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+             <div class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-10 rtl:left-0 rtl:right-auto ltr:left-auto ltr:right-0">
+                <div class="pointer-events-auto w-screen max-w-md transform transition bg-white shadow-2xl flex flex-col h-full">
+                    <div class="flex items-center justify-between px-4 py-6 border-b bg-stone-50">
+                        <h2 class="text-lg font-bold">{% trans 'سبد خرید' %}</h2>
+                        <button type="button" class="text-stone-400 hover:text-red-500" onclick="toggleCart()">✕</button>
+                    </div>
+                    <div id="cartItems" class="flex-1 overflow-y-auto p-4 space-y-4">
+                        <div class="text-center text-stone-400 mt-10"><p>{% trans 'سبد خرید خالی است' %}</p></div>
+                    </div>
+                    <div class="border-t p-4">
+                         <button class="w-full bg-stone-800 text-white py-3 rounded-xl font-bold">{% trans 'تسویه حساب' %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block content %}{% endblock %}
+
+<footer id="contact" class="bg-stone-950 text-stone-400 relative overflow-hidden font-fa">
+
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-500 to-transparent opacity-80"></div>
+
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-brand-900/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-12 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+            <div class="space-y-6">
+                <a href="/" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white text-xl shadow-lg shadow-brand-500/20 group-hover:rotate-12 transition-transform duration-300">
+                        🐝
+                    </div>
+                    <span class="text-2xl font-extrabold text-stone-100 tracking-tight">
+                        {% trans 'نکتار' %}
+                    </span>
+                </a>
+                <p class="text-sm leading-7 text-stone-400 text-justify opacity-90">
+                    {% trans 'نکتار، پلی است میان نخلستان‌های جنوب و کندوهای کوهستان با سفره شما. ما متعهدیم که طعم واقعی طبیعت را بدون واسطه و با بالاترین کیفیت به دست شما برسانیم.' %}
+                </p>
+
+                <div class="flex items-center gap-4 pt-2">
+                    <a href="#" class="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all duration-300 group">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all duration-300 group">
+                        <svg class="w-5 h-5 mr-[2px]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-lg mb-6 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                    {% trans 'دسترسی سریع' %}
+                </h4>
+                <ul class="space-y-3 text-sm font-medium">
+                    <li>
+                        <a href="#" class="block hover:text-brand-500 hover:translate-x-[-5px] transition-all duration-300">
+                            {% trans 'صفحه اصلی' %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:text-brand-500 hover:translate-x-[-5px] transition-all duration-300">
+                            {% trans 'فروشگاه محصولات' %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:text-brand-500 hover:translate-x-[-5px] transition-all duration-300">
+                            {% trans 'بلاگ آموزشی' %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:text-brand-500 hover:translate-x-[-5px] transition-all duration-300">
+                            {% trans 'درباره ما' %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white text-lg mb-6 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+                    {% trans 'خدمات مشتریان' %}
+                </h4>
+                <ul class="space-y-3 text-sm font-medium">
+                    <li>
+                        <a href="#" class="block hover:text-brand-500 hover:translate-x-[-5px] transition-all duration-300">
+                            {% trans 'سوالات متداول' %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:text-brand-500 hover:translate-x-[-5px] transition-all duration-300">
+                            {% trans 'رویه ارسال سفارش' %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:text-brand-500 hover:translate-x-[-5px] transition-all duration-300">
+                            {% trans 'حریم خصوصی' %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:text-brand-500 hover:translate-x-[-5px] transition-all duration-300">
+                            {% trans 'تماس با ما' %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="font-bold text-white text-lg mb-4">{% trans 'همراه نکتار باشید' %}</h4>
+                <p class="text-xs text-stone-500">{% trans 'با عضویت در خبرنامه از تخفیف‌های ویژه باخبر شوید.' %}</p>
+
+                <form class="flex gap-2 relative">
+                    <input type="email" placeholder="{% trans 'ایمیل شما...' %}" class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all placeholder-stone-600">
+                    <button type="submit" class="absolute left-1 top-1 bottom-1 bg-brand-600 text-white px-4 rounded-lg hover:bg-brand-500 transition-colors shadow-lg">
+                        ➜
+                    </button>
+                </form>
+
+                <div class="pt-4 border-t border-stone-800 space-y-3">
+                    <div class="flex items-center gap-3 text-sm group">
+                        <div class="w-8 h-8 rounded-full bg-stone-900 flex items-center justify-center text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            📞
+                        </div>
+                        <span class="font-bold" dir="ltr">+98 21 8888 1234</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm group">
+                        <div class="w-8 h-8 rounded-full bg-stone-900 flex items-center justify-center text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-colors">
+                            ✉️
+                        </div>
+                        <span>support@nectar.ir</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg-black/20 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-stone-600 text-center md:text-right">
+                {% trans '© 2025 تمامی حقوق مادی و معنوی برای فروشگاه نکتار محفوظ است.' %}
+            </p>
+
+            <div class="flex gap-3 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+               <div class="w-8 h-5 bg-stone-700 rounded-sm"></div>
+               <div class="w-8 h-5 bg-stone-700 rounded-sm"></div>
+               <div class="w-8 h-5 bg-stone-700 rounded-sm"></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+  // Elements
+  const mobileMenu = document.getElementById('mobileMenu');
+  const loginModal = document.getElementById('loginModal');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const cartItemsContainer = document.getElementById('cartItems');
+  const cartCount = document.getElementById('cartCount');
+
+  let cart = [];
+
+  // Toggle Functions
+  function toggleMenu() {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    } else {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+  }
+
+  function toggleCart() {
+    const isHidden = cartDrawer.classList.contains('hidden');
+    if (isHidden) {
+        cartDrawer.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    } else {
+        cartDrawer.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+  }
+
+  function openLogin() {
+    loginModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLogin() {
+    loginModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  function toggleLangMenu() {
+      const menu = document.getElementById('langMenu');
+      menu.classList.toggle('hidden');
+  }
+
+  function setLanguage(lang) {
+    const form = document.getElementById('lang-form');
+    const input = document.getElementById('lang-input');
+    if(form && input) {
+        input.value = lang;
+        form.submit();
+    }
+  }
+
+  // Close language menu on outside click
+  window.addEventListener('click', function(e) {
+      const langMenu = document.getElementById('langMenu');
+      const langBtn = e.target.closest('button');
+      if (!langBtn && !langMenu.classList.contains('hidden')) {
+           langMenu.classList.add('hidden');
+      }
+  });
+
+  // Cart Logic (Demo)
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartUI();
+    if(cartDrawer.classList.contains('hidden')) toggleCart();
+  }
+
+  function updateCartUI() {
+    cartCount.textContent = cart.length;
+    cartItemsContainer.innerHTML = '';
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = `<div class="text-center text-stone-400 mt-10"><p>{% trans 'سبد خرید خالی است' %}</p></div>`;
+      return;
+    }
+    cart.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.className = 'flex justify-between items-center bg-stone-50 p-3 rounded-lg border border-stone-200';
+      div.innerHTML = `
+        <span class="font-bold text-stone-700 text-sm">${item.name}</span>
+        <button onclick="cart.splice(${index}, 1); updateCartUI();" class="text-red-500 text-sm">حذف</button>
+      `;
+      cartItemsContainer.appendChild(div);
+    });
+  }
+</script>
+
+</body>
+</html>

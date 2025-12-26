@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-17 13:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\HoneyShop\settings.py:123
+msgid "Persian"
+msgstr ""
+
+#: .\HoneyShop\settings.py:124
+msgid "English"
+msgstr ""
+
+#: .\HoneyShop\settings.py:125
+msgid "Arabic"
+msgstr ""
+
+#: .\templates\base.html:10
+msgid "عسل و خرمای نکتار | تجربه طعم اصیل طبیعت"
+msgstr ""
+
+#: .\templates\base.html:70
+msgid "عسل و خرمای نکتار"
+msgstr ""
+
+#: .\templates\base.html:75 .\templates\base.html:136
+msgid "محصولات"
+msgstr ""
+
+#: .\templates\base.html:76 .\templates\base.html:139
+msgid "مزایا"
+msgstr ""
+
+#: .\templates\base.html:77 .\templates\base.html:142 .\templates\base.html:263
+#: .\templates\home.html:37
+msgid "درباره ما"
+msgstr ""
+
+#: .\templates\base.html:107 .\templates\base.html:178
+msgid "ورود"
+msgstr ""
+
+#: .\templates\base.html:124
+msgid "منوی نکتار"
+msgstr ""
+
+#: .\templates\base.html:146
+msgid "تغییر زبان"
+msgstr ""
+
+#: .\templates\base.html:158
+msgid "ورود / ثبت‌نام"
+msgstr ""
+
+#: .\templates\base.html:172
+msgid "ورود به حساب"
+msgstr ""
+
+#: .\templates\base.html:191
+msgid "سبد خرید"
+msgstr ""
+
+#: .\templates\base.html:195 .\templates\base.html:420
+msgid "سبد خرید خالی است"
+msgstr ""
+
+#: .\templates\base.html:198
+msgid "تسویه حساب"
+msgstr ""
+
+#: .\templates\base.html:223
+msgid "نکتار"
+msgstr ""
+
+#: .\templates\base.html:227
+msgid ""
+"نکتار، پلی است میان نخلستان‌های جنوب و کندوهای کوهستان با سفره شما. ما "
+"متعهدیم که طعم واقعی طبیعت را بدون واسطه و با بالاترین کیفیت به دست شما "
+"برسانیم."
+msgstr ""
+
+#: .\templates\base.html:243
+msgid "دسترسی سریع"
+msgstr ""
+
+#: .\templates\base.html:248
+msgid "صفحه اصلی"
+msgstr ""
+
+#: .\templates\base.html:253
+msgid "فروشگاه محصولات"
+msgstr ""
+
+#: .\templates\base.html:258
+msgid "بلاگ آموزشی"
+msgstr ""
+
+#: .\templates\base.html:272
+msgid "خدمات مشتریان"
+msgstr ""
+
+#: .\templates\base.html:277
+msgid "سوالات متداول"
+msgstr ""
+
+#: .\templates\base.html:282
+msgid "رویه ارسال سفارش"
+msgstr ""
+
+#: .\templates\base.html:287
+msgid "حریم خصوصی"
+msgstr ""
+
+#: .\templates\base.html:292
+msgid "تماس با ما"
+msgstr ""
+
+#: .\templates\base.html:299
+msgid "همراه نکتار باشید"
+msgstr ""
+
+#: .\templates\base.html:300
+msgid "با عضویت در خبرنامه از تخفیف‌های ویژه باخبر شوید."
+msgstr ""
+
+#: .\templates\base.html:303
+msgid "ایمیل شما..."
+msgstr ""
+
+#: .\templates\base.html:331
+msgid "© 2025 تمامی حقوق مادی و معنوی برای فروشگاه نکتار محفوظ است."
+msgstr ""
+
+#: .\templates\home.html:8
+msgid "خرید عسل طبیعی و خرمای نکتار | ارسال سریع"
+msgstr ""
+
+#: .\templates\home.html:12
+msgid ""
+"فروش آنلاین عسل ۱۰۰٪ طبیعی و خرمای تازه با کیفیت تضمینی، ارسال سریع و قیمت "
+"منصفانه."
+msgstr ""
+
+#: .\templates\home.html:27
+msgid "تضمین کیفیت · ارسال سریع"
+msgstr ""
+
+#: .\templates\home.html:30
+msgid "طعم واقعی"
+msgstr ""
+
+#: .\templates\home.html:30
+msgid "طبیعت"
+msgstr ""
+
+#: .\templates\home.html:30
+msgid "را بچشید"
+msgstr ""
+
+#: .\templates\home.html:33
+msgid ""
+"عسل ۱۰۰٪ طبیعی و خرمای نکتار تازه، برداشت مستقیم از تولیدکنندگان معتبر، بدون "
+"واسطه و با قیمت منصفانه."
+msgstr ""
+
+#: .\templates\home.html:36
+msgid "مشاهده محصولات"
+msgstr ""
+
+#: .\templates\home.html:52
+msgid "کاملاً طبیعی"
+msgstr ""
+
+#: .\templates\home.html:53
+msgid ""
+"بدون هیچ‌گونه افزودنی یا فرآوری صنعتی. همان چیزی که طبیعت ارائه داده است."
+msgstr ""
+
+#: .\templates\home.html:56
+msgid "برداشت تازه"
+msgstr ""
+
+#: .\templates\home.html:57
+msgid "محصولات نکتار سال جاری با حفظ عطر، طعم و خواص کامل."
+msgstr ""
+
+#: .\templates\home.html:60
+msgid "ارسال سریع"
+msgstr ""
+
+#: .\templates\home.html:61
+msgid "بسته‌بندی بهداشتی و ارسال مطمئن به سراسر کشور در کوتاه‌ترین زمان."
+msgstr ""
+
+#: .\templates\home.html:71
+msgid "محصولات پرفروش"
+msgstr ""
+
+#: .\templates\home.html:78
+msgid "عسل کوهی ممتاز"
+msgstr ""
+
+#: .\templates\home.html:79
+msgid "عطر قوی · خواص درمانی"
+msgstr ""
+
+#: .\templates\home.html:82
+msgid "خرید"
+msgstr ""
+
+#: .\templates\home.html:93
+msgid "داستان ما"
+msgstr ""
+
+#: .\templates\home.html:94
+msgid ""
+"ما با هدف رساندن محصولات اصیل ایرانی به سفره شما فعالیت خود را آغاز کردیم."
+msgstr ""

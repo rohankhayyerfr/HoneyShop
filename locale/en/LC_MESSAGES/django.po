@@ -1,0 +1,501 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-25 13:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\HoneyShop\settings.py:127
+msgid "Persian"
+msgstr "Persian"
+
+#: .\HoneyShop\settings.py:128
+msgid "English"
+msgstr "English"
+
+#: .\HoneyShop\settings.py:129
+msgid "Arabic"
+msgstr "Arabic"
+
+#: .\templates\accounts\login.html:7
+msgid "ورود به حساب کاربری | نکتار"
+msgstr "Sign in | Nektar"
+
+#: .\templates\accounts\login.html:22
+msgid "بازگشت به خانه"
+msgstr "Back to home"
+
+#: .\templates\accounts\login.html:31
+msgid "خوش آمدید"
+msgstr "Welcome"
+
+#: .\templates\accounts\login.html:33
+msgid "برای دسترسی به سفارشات خود وارد شوید."
+msgstr "Sign in to track your order"
+
+#: .\templates\accounts\login.html:42 .\templates\accounts\register.html:46
+msgid "نام کاربری"
+msgstr "Username"
+
+#: .\templates\accounts\login.html:57 .\templates\accounts\register.html:66
+msgid "رمز عبور"
+msgstr "Password"
+
+#: .\templates\accounts\login.html:58
+msgid "رمز خود را فراموش کرده‌اید؟"
+msgstr "Forgot Password?"
+
+#: .\templates\accounts\login.html:79
+msgid "مرا به خاطر بسپار"
+msgstr "Remember me"
+
+#: .\templates\accounts\login.html:86 .\templates\base.html:188
+msgid "ورود به حساب"
+msgstr "Sign in to Account"
+
+#: .\templates\accounts\login.html:96
+msgid "یا ورود با"
+msgstr "Or sign in with"
+
+#: .\templates\accounts\login.html:101
+msgid "ورود با گوگل"
+msgstr "Google"
+
+#: .\templates\accounts\login.html:107
+msgid "حساب کاربری ندارید؟"
+msgstr "Dont have an account?"
+
+#: .\templates\accounts\login.html:108
+msgid "ثبت نام کنید"
+msgstr "Register"
+
+#: .\templates\accounts\login.html:133
+msgid "طعم شیرین"
+msgstr "Sweet Taste"
+
+#: .\templates\accounts\login.html:134
+msgid "سلامتی و اصالت"
+msgstr "Health & Authenticity"
+
+#: .\templates\accounts\login.html:137
+msgid ""
+"ما در نکتار متعهدیم که بهترین عسل‌های طبیعی و خرمای ارگانیک را از دل طبیعت "
+"مستقیماً به سفره شما برسانیم."
+msgstr ""
+"At Nektar, we are committed to delivering the finest natural honey and "
+"organic dates straight from nature to your table."
+
+#: .\templates\accounts\login.html:143
+msgid "مشتری راضی"
+msgstr "Satisfied Customers"
+
+#: .\templates\accounts\login.html:147
+msgid "تضمین کیفیت"
+msgstr "Quality Guaranteed"
+
+#: .\templates\accounts\register.html:6
+msgid "عضویت در نکتار | شروع سفری شیرین"
+msgstr "Join Nektar | Start a Sweet Journey"
+
+#: .\templates\accounts\register.html:20
+msgid "بازگشت"
+msgstr "Back"
+
+#: .\templates\accounts\register.html:26
+msgid "ایجاد حساب کاربری"
+msgstr "Register"
+
+#: .\templates\accounts\register.html:28
+msgid "به خانواده بزرگ دوست‌داران طبیعت بپیوندید."
+msgstr "Join our community of nature lovers."
+
+#: .\templates\accounts\register.html:36
+msgid "نام و نام خانوادگی"
+msgstr "Full Name"
+
+#: .\templates\accounts\register.html:41
+msgid "مثال: علی محمدی"
+msgstr "Example: John Smith"
+
+#: .\templates\accounts\register.html:51 .\templates\accounts\register.html:55
+#: .\templates\accounts\register.html:60
+msgid "ایمیل"
+msgstr "Your Email"
+
+#: .\templates\accounts\register.html:72
+msgid "تکرار رمز عبور"
+msgstr "Confirm Password"
+
+#: .\templates\accounts\register.html:84
+msgid "من با"
+msgstr "i agree with"
+
+#: .\templates\accounts\register.html:84
+msgid "قوانین و مقررات"
+msgstr "Terms & Conditions"
+
+#: .\templates\accounts\register.html:84
+msgid "فروشگاه نکتار موافقم."
+msgstr "of the Nektar store."
+
+#: .\templates\accounts\register.html:89
+msgid "ثبت نام و شروع خرید"
+msgstr "Sign up & Start Shopping"
+
+#: .\templates\accounts\register.html:94
+msgid "عضویت سریع با گوگل"
+msgstr "Google"
+
+#: .\templates\accounts\register.html:99
+msgid "قبلاً ثبت‌نام کرده‌اید؟"
+msgstr "Do you have an account?"
+
+#: .\templates\accounts\register.html:100
+msgid "وارد شوید"
+msgstr "Login"
+
+#: .\templates\accounts\register.html:118
+msgid "تازگی را"
+msgstr "Experience the"
+
+#: .\templates\accounts\register.html:119
+msgid "لمس کنید"
+msgstr "Freshness"
+
+#: .\templates\accounts\register.html:122
+msgid ""
+"با عضویت در نکتار، اولین نفری باشید که از برداشت‌های تازه فصل و تخفیف‌های ویژه "
+"باخبر می‌شوید."
+msgstr ""
+"By joining Nektar, be the first to discover fresh seasonal harvests and "
+"exclusive discounts."
+
+#: .\templates\base.html:10
+msgid "عسل و خرمای نکتار | تجربه طعم اصیل طبیعت"
+msgstr "Buy Natural Honey & Nectar Dates | Authentic Taste Experience"
+
+#: .\templates\base.html:86
+msgid "عسل و خرمای نکتار"
+msgstr "Nectar Honey & Dates"
+
+#: .\templates\base.html:91 .\templates\base.html:152
+msgid "محصولات"
+msgstr "Products"
+
+#: .\templates\base.html:92 .\templates\base.html:155
+msgid "مزایا"
+msgstr "Benefits"
+
+#: .\templates\base.html:93 .\templates\base.html:158 .\templates\base.html:279
+#: .\templates\home.html:37
+msgid "درباره ما"
+msgstr "About Us"
+
+#: .\templates\base.html:123 .\templates\base.html:194
+msgid "ورود"
+msgstr "Sign In"
+
+#: .\templates\base.html:140
+msgid "منوی نکتار"
+msgstr "Nektar Menu"
+
+#: .\templates\base.html:162
+msgid "تغییر زبان"
+msgstr "Change Language"
+
+#: .\templates\base.html:174
+msgid "ورود / ثبت‌نام"
+msgstr "Login / Sign Up"
+
+#: .\templates\base.html:207 .\templates\cart\cart.html:9
+msgid "سبد خرید"
+msgstr "Shopping Cart"
+
+#: .\templates\base.html:211 .\templates\base.html:436
+msgid "سبد خرید خالی است"
+msgstr "Empty Cart"
+
+#: .\templates\base.html:214 .\templates\cart\cart.html:61
+msgid "تسویه حساب"
+msgstr "Checkout"
+
+#: .\templates\base.html:239
+msgid "نکتار"
+msgstr "Nectar"
+
+#: .\templates\base.html:243
+msgid ""
+"نکتار، پلی است میان نخلستان‌های جنوب و کندوهای کوهستان با سفره شما. ما "
+"متعهدیم که طعم واقعی طبیعت را بدون واسطه و با بالاترین کیفیت به دست شما "
+"برسانیم."
+msgstr ""
+"Nectar is a bridge between the southern palm groves and the mountain hives "
+"to your table. We are committed to delivering the true taste of nature "
+"directly and with the highest quality."
+
+#: .\templates\base.html:259
+msgid "دسترسی سریع"
+msgstr "Quick Access"
+
+#: .\templates\base.html:264
+msgid "صفحه اصلی"
+msgstr "Homepage"
+
+#: .\templates\base.html:269
+msgid "فروشگاه محصولات"
+msgstr "Shop"
+
+#: .\templates\base.html:274
+msgid "بلاگ آموزشی"
+msgstr "Blog"
+
+#: .\templates\base.html:288
+msgid "خدمات مشتریان"
+msgstr "Customer Support"
+
+#: .\templates\base.html:293
+msgid "سوالات متداول"
+msgstr "FAQ"
+
+#: .\templates\base.html:298
+msgid "رویه ارسال سفارش"
+msgstr "How we will send you?"
+
+#: .\templates\base.html:303
+msgid "حریم خصوصی"
+msgstr "Privacy"
+
+#: .\templates\base.html:308
+msgid "تماس با ما"
+msgstr "Contact Us"
+
+#: .\templates\base.html:315
+msgid "همراه نکتار باشید"
+msgstr "Stay Connected with Nectar"
+
+#: .\templates\base.html:316
+msgid "با عضویت در خبرنامه از تخفیف‌های ویژه باخبر شوید."
+msgstr "Subscribe to our newsletter to get special offers."
+
+#: .\templates\base.html:319
+msgid "ایمیل شما..."
+msgstr "Your Email"
+
+#: .\templates\base.html:347
+msgid "© 2025 تمامی حقوق مادی و معنوی برای فروشگاه نکتار محفوظ است."
+msgstr "© 2025 All rights reserved by Nektar Store."
+
+#: .\templates\cart\cart.html:44
+#, fuzzy
+#| msgid "رویه ارسال سفارش"
+msgid "خلاصه سفارش:"
+msgstr "How we will send you?"
+
+#: .\templates\cart\cart.html:46
+msgid "قیمت کل"
+msgstr ""
+
+#: .\templates\cart\cart.html:50
+msgid "تخفیف"
+msgstr ""
+
+#: .\templates\cart\cart.html:54
+msgid "هزینه ی ارسال"
+msgstr ""
+
+#: .\templates\cart\cart.html:58
+msgid "مجموع"
+msgstr ""
+
+#: .\templates\cart\cart.html:66
+#, fuzzy
+#| msgid "سبد خرید خالی است"
+msgid "سبد شما خالی است!"
+msgstr "Empty Cart"
+
+#: .\templates\cart\cart.html:67
+msgid "برای شروع چند محصول به سبد اضافه کنید."
+msgstr ""
+
+#: .\templates\cart\cart.html:68
+#, fuzzy
+#| msgid "سبد خرید"
+msgid "ادامه خرید..."
+msgstr "Shopping Cart"
+
+#: .\templates\cart\cart.html:100
+msgid "آیا می‌خواهید این محصول را حذف کنید؟"
+msgstr ""
+
+#: .\templates\home.html:8
+msgid "خرید عسل طبیعی و خرمای نکتار | ارسال سریع"
+msgstr "Buy Natural Honey & Nectar Dates | Fast Delivery"
+
+#: .\templates\home.html:12
+msgid ""
+"فروش آنلاین عسل ۱۰۰٪ طبیعی و خرمای تازه با کیفیت تضمینی، ارسال سریع و قیمت "
+"منصفانه."
+msgstr ""
+"Online sale of 100% natural honey and fresh dates with guaranteed quality, "
+"fast delivery, and fair pricing."
+
+#: .\templates\home.html:27
+msgid "تضمین کیفیت · ارسال سریع"
+msgstr "Quality Guaranteed · Fast Delivery"
+
+#: .\templates\home.html:30
+msgid "طعم واقعی"
+msgstr "Real Taste"
+
+#: .\templates\home.html:30
+msgid "طبیعت"
+msgstr "Nature"
+
+#: .\templates\home.html:30
+msgid "را بچشید"
+msgstr "Taste it"
+
+#: .\templates\home.html:33
+msgid ""
+"عسل ۱۰۰٪ طبیعی و خرمای نکتار تازه، برداشت مستقیم از تولیدکنندگان معتبر، بدون "
+"واسطه و با قیمت منصفانه."
+msgstr ""
+"100% natural honey and fresh nectar dates, harvested directly from trusted "
+"producers, without intermediaries, at fair prices."
+
+#: .\templates\home.html:36
+msgid "مشاهده محصولات"
+msgstr "View Products"
+
+#: .\templates\home.html:52
+msgid "کاملاً طبیعی"
+msgstr "Completely Natural"
+
+#: .\templates\home.html:53
+msgid ""
+"بدون هیچ‌گونه افزودنی یا فرآوری صنعتی. همان چیزی که طبیعت ارائه داده است."
+msgstr ""
+"Without any additives or industrial processing. Just as nature intended."
+
+#: .\templates\home.html:56
+msgid "برداشت تازه"
+msgstr "Freshly Harvested"
+
+#: .\templates\home.html:57
+msgid "محصولات نکتار سال جاری با حفظ عطر، طعم و خواص کامل."
+msgstr ""
+"This season’s Nektar products, preserving full aroma, taste, and benefits."
+
+#: .\templates\home.html:60
+msgid "ارسال سریع"
+msgstr "Fast Delivery"
+
+#: .\templates\home.html:61
+msgid "بسته‌بندی بهداشتی و ارسال مطمئن به سراسر کشور در کوتاه‌ترین زمان."
+msgstr ""
+"Hygienic packaging and reliable delivery across the country in the shortest "
+"time."
+
+#: .\templates\home.html:71
+msgid "محصولات پرفروش"
+msgstr "Best-Selling Products"
+
+#: .\templates\home.html:83
+msgid "خرید"
+msgstr "Buy"
+
+#: .\templates\home.html:96
+msgid "داستان ما"
+msgstr "Our Story"
+
+#: .\templates\home.html:97
+msgid ""
+"ما با هدف رساندن محصولات اصیل ایرانی به سفره شما فعالیت خود را آغاز کردیم."
+msgstr ""
+"We started our mission to bring authentic Iranian products to your table."
+
+#: .\templates\products\detail.html:299
+msgid "لطفاً یک گزینه را انتخاب کنید"
+msgstr ""
+
+#: .\templates\products\detail.html:305
+msgid "این گزینه موجود نیست"
+msgstr ""
+
+#: .\templates\products\detail.html:324
+msgid "محصول به سبد خرید اضافه شد!"
+msgstr ""
+
+#: .\templates\products\list.html:10
+#, fuzzy
+#| msgid "محصولات پرفروش"
+msgid "محصولات نکتار"
+msgstr "Best-Selling Products"
+
+#: .\templates\products\list.html:11
+msgid "مجموعه‌ای از بهترین‌های طبیعت"
+msgstr ""
+
+#: .\templates\products\list.html:21
+msgid "دسته‌بندی‌ها"
+msgstr ""
+
+#: .\templates\products\list.html:23
+#, fuzzy
+#| msgid "کاملاً طبیعی"
+msgid "عسل طبیعی"
+msgstr "Completely Natural"
+
+#: .\templates\products\list.html:24
+msgid "خرما و رطب"
+msgstr ""
+
+#: .\templates\products\list.html:55
+#, fuzzy
+#| msgid "سبد خرید"
+msgid "افزودن به سبد خرید"
+msgstr "Shopping Cart"
+
+#: .\templates\products\list.html:71 .\templates\products\list.html:75
+msgid "تومان"
+msgstr ""
+
+#: .\templates\products\list.html:81
+msgid "ناموجود"
+msgstr ""
+
+#~ msgid "عسل کوهی ممتاز"
+#~ msgstr "Premium Mountain Honey"
+
+#~ msgid "عطر قوی · خواص درمانی"
+#~ msgstr "Strong Aroma · Healing Properties"
+
+#~ msgid "شماره موبایل یا ایمیل"
+#~ msgstr "Mobile Number or Email"
+
+#~ msgid "شماره موبایل"
+#~ msgstr "Mobile Number"
+
+#~ msgid "بستن"
+#~ msgstr "Close"
+
+#~ msgid "مرجع آنلاین خرید عسل طبیعی و خرمای تازه با تضمین کیفیت."
+#~ msgstr ""
+#~ "Online reference for buying natural honey and fresh dates with quality "
+#~ "guarantee."
+
+#~ msgid "لینک‌های مفید"
+#~ msgstr "Useful Links"

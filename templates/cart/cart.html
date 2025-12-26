@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="bg-gray-50 min-h-screen py-10 font-en text-gray-800">
+    <div class="container mx-auto px-4 max-w-7xl animate-fade-in-up">
+        <h1 class="text-3xl font-extrabold text-brand-900 mb-8">{% trans 'سبد خرید' %}</h1>
+
+        {% if cart and cart.items.exists %}
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+            <!-- سبد خرید لیست محصولات -->
+            <div class="lg:col-span-8 space-y-4">
+                {% for item in cart.items %}
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 flex justify-between items-center">
+                    <div class="flex items-center gap-4">
+                        {% with first_image=item.product.images.all.0 %}
+                            <img src="{{ first_image.image.url }}" alt="{{ item.product.name }}" class="w-20 h-20 object-cover rounded-xl">
+                            {% endwith %}
+                        <div>
+                            <h2 class="font-bold text-lg">{{ item.product.name }}</h2>
+                            {% if item.variant %}
+                            <p class="text-sm text-gray-500">{{ item.variant.label }} ( Weight {{ item.variant.weight }}kg )</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center border border-gray-500 rounded-xl overflow-hidden ">
+                            <button type="button" onclick="updateCartItem('{{ item.id }}', -1)" class="w-10 h-10 text-xl font-black text-gray-700 hover:bg-gray-100 transition">-</button>
+                            <input type="text" value="{{ item.quantity }}" id="qty-{{ item.id }}" class="w-12 h-10 text-center font-bold text-gray-900 bg-white border-0" readonly>
+                            <button type="button" onclick="updateCartItem('{{ item.id }}', 1)" class="w-10 h-10 text-xl font-black text-gray-700 hover:bg-gray-100 transition">+</button>
+                        </div>
+                        <span class="font-bold text-lg">${{ item.total_price|intcomma }}</span>
+                        <button onclick="removeCartItem('{{ item.id }}')" class="text-red-600 hover:text-red-800 transition font-bold text-lg">&times;</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- خلاصه سبد خرید -->
+            <div class="lg:col-span-4 bg-white rounded-3xl shadow-xl border border-gray-200 p-6 lg:p-8">
+                <h3 class="text-xl font-bold text-brand-900 mb-4">{% trans 'خلاصه سفارش:' %}</h3>
+                <div class="flex justify-between mb-2">
+                    <span>{% trans 'قیمت کل' %}</span>
+                    <span>${{ cart.sub_total|intcomma }}</span>
+                </div>
+                <div class="flex justify-between mb-2">
+                    <span>{% trans 'تخفیف' %}</span>
+                    <span>${{ cart.discount|intcomma }}</span>
+                </div>
+                <div class="flex justify-between mb-4">
+                    <span>{% trans 'هزینه ی ارسال' %}</span>
+                    <span>${{ cart.shipping_fee|intcomma }}</span>
+                </div>
+                <div class="border-t border-gray-200 pt-4 flex justify-between items-center mb-4">
+                    <span class="font-bold text-lg">{% trans 'مجموع' %}</span>
+                    <span class="font-bold text-xl text-brand-900">${{ cart.final_total|intcomma }}</span>
+                </div>
+                <a href="{% url 'checkout' %}" class="block text-center bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl transition">{% trans 'تسویه حساب' %}</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="text-center py-20">
+            <h2 class="text-2xl font-bold mb-4">{% trans 'سبد شما خالی است!' %}</h2>
+            <p class="text-gray-600 mb-6">{% trans 'برای شروع چند محصول به سبد اضافه کنید.' %}</p>
+            <a href="/" class="inline-block bg-brand-600 hover:bg-brand-500 text-white font-bold py-2 px-6 rounded-xl transition">{% trans 'ادامه خرید...' %}</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+function updateCartItem(itemId, delta) {
+    const qtyInput = document.getElementById(`qty-${itemId}`);
+    let qty = parseInt(qtyInput.value);
+    qty += delta;
+    if (qty < 1) qty = 1;
+    qtyInput.value = qty;
+
+    fetch("{% url 'cart:update_item' %}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": "{{ csrf_token }}"
+        },
+        body: new URLSearchParams({
+            item_id: itemId,
+            delta: delta
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.success) location.reload(); // برای ساده بودن، صفحه ریلود می‌شود
+    });
+}
+
+function removeCartItem(itemId) {
+    if(!confirm("{% trans 'آیا می‌خواهید این محصول را حذف کنید؟' %}")) return;
+
+    fetch("{% url 'cart:remove_item' %}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "X-CSRFToken": "{{ csrf_token }}"
+        },
+        body: new URLSearchParams({ item_id: itemId })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.success) location.reload();
+    });
+}
+</script>
+{% endblock %}

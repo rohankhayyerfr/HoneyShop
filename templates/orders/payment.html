@@ -1,0 +1,31 @@
+TEST TEMPLATE
+
+<script src="https://www.paypal.com/sdk/js?client-id={{ PAYPAL_CLIENT_ID }}&currency=USD"></script>
+
+<div id="paypal-button-container"></div>
+
+<script>
+paypal.Buttons({
+    createOrder: function () {
+        return fetch("{% url 'create_paypal_order' order.id %}")
+            .then(res => res.json())
+            .then(data => data.id);
+    },
+    onApprove: function (data) {
+        return fetch("{% url 'capture_paypal_order' order.id %}", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": "{{ csrf_token }}"
+            },
+            body: new URLSearchParams({
+                paypal_order_id: data.orderID
+            })
+        }).then(() => {
+            window.location.href = "{% url 'payment_success' %}";
+        });
+    },
+    onError: function () {
+        window.location.href = "{% url 'payment_failed' %}";
+    }
+}).render('#paypal-button-container');
+</script>

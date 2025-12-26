@@ -1,0 +1,390 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<script id="variants-data" type="application/json">
+    {
+        {% for v in variants %}
+        "{{ v.id }}": {
+            "price": "{{ v.price|intcomma }}",
+            "old_price": "{% if v.old_price %}{{ v.old_price|intcomma }}{% else %}null{% endif %}",
+            "inventory": {{ v.inventory }},
+            "label": "{{ v.label }}",
+            "weight": "{{ v.weight }}",
+            "discount": {{ v.discount_percent }}
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    }
+</script>
+
+<div class="bg-gray-50 min-h-screen py-10 font-en text-gray-800" dir="ltr">
+    <div class="container mx-auto px-4 max-w-7xl animate-fade-in-up">
+
+        <nav class="flex text-sm text-gray-500 mb-6 space-x-2">
+            <a href="/" class="hover:text-brand-600 transition">Home</a>
+            <span>/</span>
+            <a href="#" class="hover:text-brand-600 transition">{{ product.category.name }}</a>
+            <span>/</span>
+            <span class="text-gray-900 font-medium">{{ product.name }}</span>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+            <div class="lg:col-span-7">
+                <div class="sticky top-24">
+                    <div class="bg-white rounded-3xl shadow-sm border border-brand-100 p-4 mb-4 relative overflow-hidden group">
+
+                        <div id="badge-discount" class="absolute top-4 left-4 z-10 animate-float {% if not variant.old_price %}hidden{% endif %}">
+                            <span class="bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                                <span id="badge-text">{{ variant.discount_percent }}%</span> OFF
+                            </span>
+                        </div>
+
+                        <img id="main-image"
+                             src="{{ main_image.image.url }}"
+                             alt="{{ product.name }}"
+                             class="w-full h-[400px] lg:h-[600px] object-contain transition-transform duration-700 group-hover:scale-105">
+                    </div>
+
+                    <div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                        {% for img in images %}
+                        <button onclick="changeImage('{{ img.image.url }}')"
+                                class="flex-shrink-0 w-20 h-20 border-2 border-transparent hover:border-brand-500 rounded-xl overflow-hidden transition focus:border-brand-600 focus:outline-none bg-white">
+                            <img src="{{ img.image.url }}" class="w-full h-full object-cover">
+                        </button>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <div class="bg-white rounded-3xl shadow-xl shadow-brand-100/50 border border-white p-6 lg:p-8">
+
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-brand-50 text-brand-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            {{ product.category.name }}
+                        </span>
+                        {% if not product.is_active %}
+                        <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">Unavailable</span>
+                        {% endif %}
+                    </div>
+
+                    <h1 class="text-3xl lg:text-4xl font-extrabold text-brand-900 mb-4 leading-tight">
+                        {{ product.name }}
+                    </h1>
+
+                    <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                        {{ product.short_description }}
+                    </p>
+
+                    <form id="add-to-cart-form" method="POST" action=""> {% csrf_token %}
+                        <input type="hidden" name="variant_id" id="selected-variant-id" value="{{ variant.id }}">
+
+                        <div class="mb-8 p-4 bg-brand-50 rounded-2xl border border-brand-100">
+                            <p class="text-xs text-brand-800 font-semibold uppercase mb-1">Total Price</p>
+                            <div class="flex items-center gap-3">
+                                <span class="text-4xl font-black text-brand-900" id="display-price">
+                                    ${{ variant.price|intcomma }}
+                                </span>
+                                <span class="text-lg text-gray-400 line-through decoration-red-400 decoration-2 {% if not variant.old_price %}hidden{% endif %}" id="display-old-price">
+                                    ${{ variant.old_price|intcomma }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-sm font-bold text-gray-900 mb-3">Select Option:</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                {% for v in variants %}
+                                <div onclick="selectVariant('{{ v.id }}', this)"
+                                     class="cursor-pointer relative border-2 rounded-xl p-3 flex flex-col items-center justify-center transition-all duration-200
+                                     {% if v.id == variant.id %}border-brand-500 bg-brand-50 text-brand-900 ring-1 ring-brand-500{% else %}border-gray-200 hover:border-brand-200 text-gray-600{% endif %}">
+                                    <span class="font-bold text-sm">{{ v.label }}</span>
+                                    <span class="text-xs mt-1 text-gray-500">{{ v.weight }}g</span>
+
+                                    {% if v.inventory == 0 %}
+                                    <div class="absolute inset-0 bg-white/70 backdrop-blur-[1px] flex items-center justify-center rounded-xl z-10">
+                                        <span class="text-xs font-bold text-gray-500 border border-gray-400 px-2 py-0.5 rounded rotate-[-10deg]">Sold Out</span>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-4">
+                            <div id="stock-status" class="flex items-center gap-2 text-sm font-medium {% if variant.inventory > 0 %}text-green-600{% else %}text-red-600{% endif %}">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span id="inventory-text">
+                                    {% if variant.inventory > 0 %}In Stock ({{ variant.inventory }} left){% else %}Out of Stock{% endif %}
+                                </span>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <div class="flex items-center border border-gray-300 rounded-xl overflow-hidden divide-x divide-x-reverse divide-gray-300">
+                                <button  type="button" onclick="changeQty(-1)" class="w-12 h-10 text-xl font-black text-gray-700 hover:bg-gray-100 transition">-</button>
+                                <input type="text" id="quantity" value="1" class="w-16 h-10 text-center font-bold text-lg text-gray-900 focus:outline-none bg-white border-0" readonly>
+                                <button  type="button" onclick="changeQty(1)" class="w-12 h-10 text-xl font-black text-gray-700 hover:bg-gray-100 transition">+</button>
+                            </div>
+
+                                <button type="submit"
+                                        class="flex-1 text-white font-bold text-lg py-3.5 px-6 rounded-xl add-to-cart-btn shadow-lg transition-all transform hover:-translate-y-1 active:translate-y-0
+                                        {% if variant.inventory > 0 %}bg-brand-600 hover:bg-brand-500 shadow-brand-500/30{% else %}bg-gray-400 cursor-not-allowed shadow-none{% endif %}"
+                                        {% if variant.inventory == 0 %}disabled{% endif %}>
+                                    {% if variant.inventory > 0 %}Add to Cart{% else %}Sold Out{% endif %}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-gray-100">
+                        <div class="text-center group">
+                            <div class="w-12 h-12 mx-auto bg-brand-50 text-brand-600 rounded-full flex items-center justify-center mb-2 transition group-hover:bg-brand-100">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            </div>
+                            <span class="text-xs font-semibold text-gray-600">Secure Payment</span>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-12 h-12 mx-auto bg-brand-50 text-brand-600 rounded-full flex items-center justify-center mb-2 transition group-hover:bg-brand-100">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <span class="text-xs font-semibold text-gray-600">Fast Shipping</span>
+                        </div>
+                        <div class="text-center group">
+                            <div class="w-12 h-12 mx-auto bg-brand-50 text-brand-600 rounded-full flex items-center justify-center mb-2 transition group-hover:bg-brand-100">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            </div>
+                            <span class="text-xs font-semibold text-gray-600">Free Returns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div class="md:col-span-2">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                    <h3 class="text-2xl font-bold text-brand-900 mb-6 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-brand-500 rounded-full"></span>
+                        Description
+                    </h3>
+                    <div class="prose prose-brand max-w-none text-gray-600 leading-relaxed">
+                        {{ product.description|linebreaks }}
+                    </div>
+                </div>
+
+                {% if policy %}
+                <div class="mt-8 bg-brand-50 rounded-3xl p-8 border border-brand-100">
+                    <h3 class="text-xl font-bold text-brand-900 mb-4">Shipping & Returns</h3>
+                    <ul class="space-y-3 text-sm text-brand-900/80">
+                        <li class="flex gap-2 items-start">
+                            <span class="font-bold min-w-[80px]">Shipping:</span>
+                            <span>{{ policy.shipping_text }}</span>
+                        </li>
+                        <li class="flex gap-2 items-start">
+                            <span class="font-bold min-w-[80px]">Packaging:</span>
+                            <span>{{ policy.packaging_text }}</span>
+                        </li>
+                        <li class="flex gap-2 items-start">
+                            <span class="font-bold min-w-[80px]">Returns:</span>
+                            <span>{{ policy.return_text }}</span>
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+
+{#            <div class="md:col-span-1">#}
+{#                <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 sticky top-24">#}
+{#                    <h3 class="text-xl font-bold text-brand-900 mb-6">Specifications</h3>#}
+{#                    <dl class="divide-y divide-gray-100">#}
+{#                        {% for spec in specs %}#}
+{#                        <div class="py-3 flex justify-between items-center">#}
+{#                            <dt class="text-sm font-medium text-gray-500">{{ spec.title }}</dt>#}
+{#                            <dd class="text-sm font-bold text-gray-900">{{ spec.value }}</dd>#}
+{#                        </div>#}
+{#                        {% endfor %}#}
+{#                    </dl>#}
+{#                </div>#}
+{#            </div>#}
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeImage(src) {
+        const mainImg = document.getElementById('main-image');
+        mainImg.style.opacity = '0.5';
+        setTimeout(() => {
+            mainImg.src = src;
+            mainImg.style.opacity = '1';
+        }, 150);
+    }
+
+
+// --- توابع جاوااسکریپت برای تعاملات UI ---
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const variantsData = JSON.parse(document.getElementById('variants-data').textContent);
+    const selectedVariantInput = document.getElementById('selected-variant-id');
+    const displayPrice = document.getElementById('display-price');
+    const displayOldPrice = document.getElementById('display-old-price');
+    const badgeDiscount = document.getElementById('badge-discount');
+    const badgeText = document.getElementById('badge-text');
+    const stockStatus = document.getElementById('stock-status');
+    const inventoryText = document.getElementById('inventory-text');
+    const addToCartBtn = document.querySelector('.add-to-cart-btn');
+    const qtyInput = document.getElementById('quantity');
+
+    function formatPrice(value) {
+        return `$${value.toLocaleString()}`;
+    }
+
+    window.selectVariant = function(id, element) {
+        const variant = variantsData[id];
+        selectedVariantInput.value = id;
+
+        // بروزرسانی قیمت
+        displayPrice.textContent = formatPrice(Number(variant.price.replace(/,/g, '')));
+        if(variant.old_price !== "null") {
+            displayOldPrice.textContent = `$${variant.old_price}`;
+            displayOldPrice.classList.remove('hidden');
+            badgeDiscount.classList.remove('hidden');
+            badgeText.textContent = variant.discount;
+        } else {
+            displayOldPrice.classList.add('hidden');
+            badgeDiscount.classList.add('hidden');
+        }
+
+        // بروزرسانی موجودی
+        if (variant.inventory > 0) {
+            stockStatus.classList.remove('text-red-600');
+            stockStatus.classList.add('text-green-600');
+            inventoryText.textContent = `In Stock (${variant.inventory} left)`;
+            addToCartBtn.disabled = false;
+            addToCartBtn.textContent = "Add to Cart";
+            addToCartBtn.classList.remove('bg-gray-400', 'cursor-not-allowed');
+            addToCartBtn.classList.add('bg-brand-600', 'hover:bg-brand-500', 'shadow-brand-500/30');
+        } else {
+            stockStatus.classList.remove('text-green-600');
+            stockStatus.classList.add('text-red-600');
+            inventoryText.textContent = "Out of Stock";
+            addToCartBtn.disabled = true;
+            addToCartBtn.textContent = "Sold Out";
+            addToCartBtn.classList.remove('bg-brand-600', 'hover:bg-brand-500', 'shadow-brand-500/30');
+            addToCartBtn.classList.add('bg-gray-400', 'cursor-not-allowed', 'shadow-none');
+        }
+
+        // استایل واریانت انتخاب شده
+        document.querySelectorAll('.variant-btn').forEach(v => {
+            v.classList.remove('border-brand-500', 'bg-brand-50', 'text-brand-900', 'ring-1', 'ring-brand-500');
+        });
+        element.classList.add('border-brand-500', 'bg-brand-50', 'text-brand-900', 'ring-1', 'ring-brand-500');
+    };
+
+    // افزودن به سبد خرید
+    addToCartBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const variantId = selectedVariantInput.value;
+        const quantity = parseInt(qtyInput.value);
+
+        if(!variantId) {
+            alert("{% trans 'لطفاً یک گزینه را انتخاب کنید' %}");
+            return;
+        }
+
+        const variant = variantsData[variantId];
+        if(variant.inventory === 0) {
+            alert("{% trans 'این گزینه موجود نیست' %}");
+            return;
+        }
+
+        fetch('{% url "cart:add_to_cart" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({
+                product_id: '{{ product.id }}',
+                variant_id: variantId,
+                quantity: quantity
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.status === 'success') {
+                alert('{% trans "محصول به سبد خرید اضافه شد!" %}');
+                console.log(data);
+                // اگر خواستی می‌توانی اینجا تعداد آیتم سبد را بروزرسانی کنی
+            } else {
+                alert(data.message);
+            }
+        })
+        .catch(err => console.error(err));
+    });
+
+    // تغییر تعداد
+    window.changeQty = function(amount) {
+        let qty = parseInt(qtyInput.value);
+        qty += amount;
+        if(qty < 1) qty = 1;
+        qtyInput.value = qty;
+    };
+
+    // مقدار اولیه: انتخاب اولین واریانت فعال
+    const firstVariantId = selectedVariantInput.value;
+    const firstVariantBtn = document.querySelector(`.variant-btn[onclick*="'${firstVariantId}'"]`);
+    if(firstVariantBtn) selectVariant(firstVariantId, firstVariantBtn);
+});
+
+
+
+// --- توابع عمومی (برای onclick) ---
+
+function toggleSection(sectionId, iconId) {
+    const section = document.getElementById(sectionId);
+    const icon = document.getElementById(iconId);
+
+    const isClosed = section.style.maxHeight === '' || section.style.maxHeight === '0px';
+
+    if (isClosed) {
+        section.style.maxHeight = section.scrollHeight + "px";
+        icon.classList.add('rotate-180');
+    } else {
+        // برای انیمیشن بهتر، ابتدا ارتفاع واقعی را تنظیم کرده و سپس آن را به 0px برمی‌گردانیم
+        section.style.maxHeight = section.scrollHeight + "px";
+        setTimeout(() => {
+            section.style.maxHeight = '0px';
+        }, 10);
+        icon.classList.remove('rotate-180');
+    }
+}
+
+window.toggleDescription = function() {
+    // از آنجایی که متن مشاهده/بستن از داخل خود آکاردئون حذف شد، نیازی به آیدی متن نیست.
+    toggleSection('full-description', 'desc-icon');
+}
+
+window.toggleSpecs = function() {
+    toggleSection('full-specs', 'specs-icon');
+}
+
+window.changeQty = function(amount) {
+    const qtyInput = document.getElementById('quantity');
+    let qty = parseInt(qtyInput.value);
+    qty += amount;
+    if (qty < 1) qty = 1;
+    qtyInput.value = qty;
+}
+</script>
+
+
+{% endblock %}

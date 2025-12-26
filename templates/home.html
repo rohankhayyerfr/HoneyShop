@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block body_class %}
+bg-gradient-to-b from-stone-50 to-amber-50 text-stone-800
+{% endblock %}
+
+{% block title %}
+{% trans "خرید عسل طبیعی و خرمای نکتار | ارسال سریع" %}
+{% endblock %}
+
+{% block meta_description %}
+{% trans "فروش آنلاین عسل ۱۰۰٪ طبیعی و خرمای تازه با کیفیت تضمینی، ارسال سریع و قیمت منصفانه." %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-l from-amber-200/40 to-yellow-100/20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-24 grid md:grid-cols-2 gap-14 items-center">
+      <div class="space-y-6">
+       <span class="inline-block bg-amber-100 text-amber-700 px-4 py-1 rounded-full text-sm">
+            {% trans "تضمین کیفیت · ارسال سریع" %}
+        </span>
+        <h1 class="text-5xl font-extrabold leading-tight">
+            {% trans "طعم واقعی" %} <span class="text-amber-600">{% trans "طبیعت" %}</span> {% trans "را بچشید" %}
+        </h1>
+          <p class="text-lg text-stone-600 leading-8">
+  {% trans "عسل ۱۰۰٪ طبیعی و خرمای نکتار تازه، برداشت مستقیم از تولیدکنندگان معتبر، بدون واسطه و با قیمت منصفانه." %}
+</p>
+        <div class="flex gap-4">
+          <a href="#products" class="bg-amber-600 text-white px-8 py-4 rounded-2xl shadow-lg hover:bg-amber-700 transition">{% trans "مشاهده محصولات" %}</a>
+          <a href="#about" class="border border-amber-600 text-amber-600 px-8 py-4 rounded-2xl hover:bg-amber-50 transition">{% trans "درباره ما" %}</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="absolute -top-10 -right-10 w-72 h-72 bg-amber-300/30 rounded-full blur-3xl"></div>
+        <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76" alt="عسل طبیعی" class="relative rounded-[2rem] shadow-2xl object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-3xl p-8 shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-bold mb-3 text-amber-600">{% trans "کاملاً طبیعی" %}</h4>
+          <p class="text-sm text-stone-600 leading-7">{% trans 'بدون هیچ‌گونه افزودنی یا فرآوری صنعتی. همان چیزی که طبیعت ارائه داده است.' %}</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-bold mb-3 text-amber-600">{% trans 'برداشت تازه' %}</h4>
+          <p class="text-sm text-stone-600 leading-7">{% trans 'محصولات نکتار سال جاری با حفظ عطر، طعم و خواص کامل.' %}</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow hover:shadow-lg transition">
+          <h4 class="text-xl font-bold mb-3 text-amber-600">{% trans 'ارسال سریع' %}</h4>
+          <p class="text-sm text-stone-600 leading-7">{% trans 'بسته‌بندی بهداشتی و ارسال مطمئن به سراسر کشور در کوتاه‌ترین زمان.' %}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-extrabold text-center mb-16">
+        {% trans "محصولات پرفروش" %}
+        </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <div class="group bg-stone-50 rounded-3xl shadow hover:shadow-xl transition overflow-hidden">
+            {% for product in products %}
+          <img src="{{ product.main_image.image.url }}" class="h-48 w-full object-cover group-hover:scale-105 transition" />
+          <div class="p-6">
+            <a href="{% url 'store:product_detail' product.slug %}" class="font-bold mb-2">{{ product.name }}</a>
+            <p class="text-sm text-stone-600 mb-4"> {{ product.short_description }}</p>
+            <div class="flex justify-between items-center">
+              <span class="font-extrabold text-amber-600"></span>
+              <button class="text-sm bg-amber-600 text-white px-4 py-2 rounded-xl">{% trans 'خرید' %}</button>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h3 class="text-4xl font-extrabold mb-8">{% trans "داستان ما" %}</h3>
+      <p class="text-lg leading-9 text-stone-600">{% trans "ما با هدف رساندن محصولات اصیل ایرانی به سفره شما فعالیت خود را آغاز کردیم." %}</p>
+    </div>
+  </section>
+
+
+
+
+{% endblock %}

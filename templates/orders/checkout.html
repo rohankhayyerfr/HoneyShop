@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="full_name" required>
+    <input type="text" name="phone" required>
+    <input type="email" name="email" required>
+    <textarea name="address" required></textarea>
+
+    {% for item in cart.items %}
+        {{ item.product.name }}
+        {% if item.variant %} {{ item.variant.label }} {% endif %}
+        {{ item.quantity }}
+        {{ item.total_price }}
+    {% endfor %}
+
+    {{ cart.final_total }}
+
+    <button type="submit">ادامه به پرداخت</button>
+</form>
+{% endblock  %}
