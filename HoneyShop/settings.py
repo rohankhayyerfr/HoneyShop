@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 from django.template.context_processors import media
@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j7j6@b@sw!&n@dq#qnb$o1s+f9%(9u^&yl$e6qg(dj!jc5*x6g'
-
+# SECRET_KEY = 'django-insecure-j7j6@b@sw!&n@dq#qnb$o1s+f9%(9u^&yl$e6qg(dj!jc5*x6g'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['https://honeyshop-h3qt.onrender.com']
 
