@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-j7j6@b@sw!&n@dq#qnb$o1s+f9%(9u^&yl$e6qg(dj!jc5*x6g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://honeyshop-h3qt.onrender.com']
 
 
 # Application definition
