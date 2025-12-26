@@ -52,7 +52,7 @@ def checkout(request):
                 price=item.unit_price
             )
 
-        cart.items.delete()
+
 
         return redirect('payment', order_id=order.id)
 
