@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-25 13:12+0200\n"
+"POT-Creation-Date: 2025-12-26 14:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\HoneyShop\settings.py:127
+#: .\HoneyShop\settings.py:132
 msgid "Persian"
 msgstr "Persian"
 
-#: .\HoneyShop\settings.py:128
+#: .\HoneyShop\settings.py:133
 msgid "English"
 msgstr "English"
 
-#: .\HoneyShop\settings.py:129
+#: .\HoneyShop\settings.py:134
 msgid "Arabic"
 msgstr "Arabic"
 
@@ -299,46 +299,48 @@ msgid "© 2025 تمامی حقوق مادی و معنوی برای فروشگا�
 msgstr "© 2025 All rights reserved by Nektar Store."
 
 #: .\templates\cart\cart.html:44
-#, fuzzy
-#| msgid "رویه ارسال سفارش"
 msgid "خلاصه سفارش:"
-msgstr "How we will send you?"
+msgstr "Order Summary:"
+
 
 #: .\templates\cart\cart.html:46
 msgid "قیمت کل"
-msgstr ""
+msgstr "Total Price"
+
 
 #: .\templates\cart\cart.html:50
 msgid "تخفیف"
-msgstr ""
+msgstr "Discount"
+
 
 #: .\templates\cart\cart.html:54
 msgid "هزینه ی ارسال"
-msgstr ""
+msgstr "Shipping Fee"
 
 #: .\templates\cart\cart.html:58
 msgid "مجموع"
-msgstr ""
+msgstr "Total"
+
 
 #: .\templates\cart\cart.html:66
-#, fuzzy
-#| msgid "سبد خرید خالی است"
 msgid "سبد شما خالی است!"
-msgstr "Empty Cart"
+msgstr "Your cart is empty!"
+
 
 #: .\templates\cart\cart.html:67
 msgid "برای شروع چند محصول به سبد اضافه کنید."
-msgstr ""
+msgstr "Add some products to the cart to get started."
+
 
 #: .\templates\cart\cart.html:68
-#, fuzzy
-#| msgid "سبد خرید"
 msgid "ادامه خرید..."
-msgstr "Shopping Cart"
+msgstr "Continue Shopping..."
+
 
 #: .\templates\cart\cart.html:100
 msgid "آیا می‌خواهید این محصول را حذف کنید؟"
-msgstr ""
+msgstr "Do you want to remove this product?"
+
 
 #: .\templates\home.html:8
 msgid "خرید عسل طبیعی و خرمای نکتار | ارسال سریع"
@@ -427,55 +429,59 @@ msgid ""
 msgstr ""
 "We started our mission to bring authentic Iranian products to your table."
 
-#: .\templates\products\detail.html:299
+#: .\templates\products\detail.html:307
 msgid "لطفاً یک گزینه را انتخاب کنید"
-msgstr ""
+msgstr "Please select an option"
 
-#: .\templates\products\detail.html:305
+
+#: .\templates\products\detail.html:313
 msgid "این گزینه موجود نیست"
-msgstr ""
+msgstr "This option is not available"
 
-#: .\templates\products\detail.html:324
+
+#: .\templates\products\detail.html:332
 msgid "محصول به سبد خرید اضافه شد!"
-msgstr ""
+msgstr "Product added to the cart!"
+
 
 #: .\templates\products\list.html:10
-#, fuzzy
-#| msgid "محصولات پرفروش"
 msgid "محصولات نکتار"
-msgstr "Best-Selling Products"
+msgstr "Nectar Products"
+
 
 #: .\templates\products\list.html:11
 msgid "مجموعه‌ای از بهترین‌های طبیعت"
-msgstr ""
+msgstr "A collection of nature’s best"
+
 
 #: .\templates\products\list.html:21
 msgid "دسته‌بندی‌ها"
-msgstr ""
+msgstr "Categories"
+
 
 #: .\templates\products\list.html:23
-#, fuzzy
-#| msgid "کاملاً طبیعی"
 msgid "عسل طبیعی"
-msgstr "Completely Natural"
+msgstr "Natural Honey"
+
 
 #: .\templates\products\list.html:24
 msgid "خرما و رطب"
-msgstr ""
+msgstr "Dates and Fresh Dates"
+
 
 #: .\templates\products\list.html:55
-#, fuzzy
-#| msgid "سبد خرید"
 msgid "افزودن به سبد خرید"
-msgstr "Shopping Cart"
+msgstr "Add to Cart"
+
 
 #: .\templates\products\list.html:71 .\templates\products\list.html:75
 msgid "تومان"
-msgstr ""
+msgstr "USD"
 
 #: .\templates\products\list.html:81
 msgid "ناموجود"
-msgstr ""
+msgstr "Out of Stock"
+
 
 #~ msgid "عسل کوهی ممتاز"
 #~ msgstr "Premium Mountain Honey"

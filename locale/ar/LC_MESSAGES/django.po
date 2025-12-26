@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-25 13:12+0200\n"
+"POT-Creation-Date: 2025-12-26 14:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: .\HoneyShop\settings.py:127
+#: .\HoneyShop\settings.py:132
 msgid "Persian"
 msgstr "الفارسية"
 
-#: .\HoneyShop\settings.py:128
+#: .\HoneyShop\settings.py:133
 msgid "English"
 msgstr "الإنجليزية"
 
-#: .\HoneyShop\settings.py:129
+#: .\HoneyShop\settings.py:134
 msgid "Arabic"
 msgstr "العربية"
 
@@ -49,7 +49,8 @@ msgstr "قم بتسجيل الدخول للوصول إلى طلباتك."
 
 #: .\templates\accounts\login.html:42 .\templates\accounts\register.html:46
 msgid "نام کاربری"
-msgstr ""
+msgstr "اسم المستخدم"
+
 
 #: .\templates\accounts\login.html:57 .\templates\accounts\register.html:66
 msgid "رمز عبور"
@@ -300,46 +301,50 @@ msgid "© 2025 تمامی حقوق مادی و معنوی برای فروشگا�
 msgstr "© 2025 جميع الحقوق محفوظة لمتجر نكتار."
 
 #: .\templates\cart\cart.html:44
-#, fuzzy
-#| msgid "رویه ارسال سفارش"
+
 msgid "خلاصه سفارش:"
-msgstr "سياسة الشحن"
+msgstr "ملخص الطلب:"
+
 
 #: .\templates\cart\cart.html:46
 msgid "قیمت کل"
-msgstr ""
+msgstr "السعر الإجمالي"
+
 
 #: .\templates\cart\cart.html:50
 msgid "تخفیف"
-msgstr ""
+msgstr "خصم"
+
 
 #: .\templates\cart\cart.html:54
 msgid "هزینه ی ارسال"
-msgstr ""
+msgstr "تكلفة الشحن"
+
 
 #: .\templates\cart\cart.html:58
 msgid "مجموع"
-msgstr ""
+msgstr "المجموع"
+
 
 #: .\templates\cart\cart.html:66
-#, fuzzy
-#| msgid "سبد خرید خالی است"
 msgid "سبد شما خالی است!"
-msgstr "سلة المشتريات فارغة"
+msgstr "سلة المشتريات فارغة!"
+
 
 #: .\templates\cart\cart.html:67
 msgid "برای شروع چند محصول به سبد اضافه کنید."
-msgstr ""
+msgstr "للبدء، أضف بعض المنتجات إلى السلة."
+
 
 #: .\templates\cart\cart.html:68
-#, fuzzy
-#| msgid "سبد خرید"
 msgid "ادامه خرید..."
-msgstr "سلة المشتريات"
+msgstr "متابعة التسوق..."
+
 
 #: .\templates\cart\cart.html:100
 msgid "آیا می‌خواهید این محصول را حذف کنید؟"
-msgstr ""
+msgstr "هل تريد حذف هذا المنتج؟"
+
 
 #: .\templates\home.html:8
 msgid "خرید عسل طبیعی و خرمای نکتار | ارسال سریع"
@@ -425,55 +430,59 @@ msgid ""
 "ما با هدف رساندن محصولات اصیل ایرانی به سفره شما فعالیت خود را آغاز کردیم."
 msgstr "بدأنا نشاطنا بهدف إيصال المنتجات الإيرانية الأصيلة إلى مائدتكم."
 
-#: .\templates\products\detail.html:299
+#: .\templates\products\detail.html:307
 msgid "لطفاً یک گزینه را انتخاب کنید"
-msgstr ""
+msgstr "يرجى اختيار خيار واحد"
 
-#: .\templates\products\detail.html:305
+
+#: .\templates\products\detail.html:313
 msgid "این گزینه موجود نیست"
-msgstr ""
+msgstr "هذا الخيار غير متوفر"
 
-#: .\templates\products\detail.html:324
+
+#: .\templates\products\detail.html:332
 msgid "محصول به سبد خرید اضافه شد!"
-msgstr ""
+msgstr "تم إضافة المنتج إلى السلة!"
+
 
 #: .\templates\products\list.html:10
-#, fuzzy
-#| msgid "محصولات پرفروش"
 msgid "محصولات نکتار"
-msgstr "المنتجات الأكثر مبيعًا"
+msgstr "منتجات نكتار"
+
 
 #: .\templates\products\list.html:11
 msgid "مجموعه‌ای از بهترین‌های طبیعت"
-msgstr ""
+msgstr "مجموعة من أفضل ما في الطبيعة"
+
 
 #: .\templates\products\list.html:21
 msgid "دسته‌بندی‌ها"
-msgstr ""
+msgstr "الفئات"
+
 
 #: .\templates\products\list.html:23
-#, fuzzy
-#| msgid "کاملاً طبیعی"
 msgid "عسل طبیعی"
-msgstr "طبيعي بالكامل"
+msgstr "عسل طبيعي"
+
 
 #: .\templates\products\list.html:24
 msgid "خرما و رطب"
-msgstr ""
+msgstr "التمر والرطب"
+
 
 #: .\templates\products\list.html:55
-#, fuzzy
-#| msgid "سبد خرید"
 msgid "افزودن به سبد خرید"
-msgstr "سلة المشتريات"
+msgstr "أضف إلى السلة"
+
 
 #: .\templates\products\list.html:71 .\templates\products\list.html:75
 msgid "تومان"
-msgstr ""
+msgstr "USD"
 
 #: .\templates\products\list.html:81
 msgid "ناموجود"
-msgstr ""
+msgstr "غير متوفر"
+
 
 #~ msgid "عسل کوهی ممتاز"
 #~ msgstr "عسل جبلي ممتاز"
