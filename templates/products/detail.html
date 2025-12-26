@@ -100,7 +100,7 @@
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                 {% for v in variants %}
                                 <div onclick="selectVariant('{{ v.id }}', this)"
-                                     class="cursor-pointer relative border-2 rounded-xl p-3 flex flex-col items-center justify-center transition-all duration-200
+                                     class="variant-btn cursor-pointer relative border-2 rounded-xl p-3 flex flex-col items-center justify-center transition-all duration-200
                                      {% if v.id == variant.id %}border-brand-500 bg-brand-50 text-brand-900 ring-1 ring-brand-500{% else %}border-gray-200 hover:border-brand-200 text-gray-600{% endif %}">
                                     <span class="font-bold text-sm">{{ v.label }}</span>
                                     <span class="text-xs mt-1 text-gray-500">{{ v.weight }}g</span>
@@ -283,17 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // استایل واریانت انتخاب شده
         document.querySelectorAll('.variant-btn').forEach(v => {
-            v.classList.remove(
-            'border-brand-500', 'bg-brand-50', 'text-brand-700', 'ring-1', 'ring-brand-500'
-        );
-            v.classList.add('border-stone-200', 'text-stone-600');
+            v.classList.remove('border-brand-500', 'bg-brand-50', 'text-brand-700', 'ring-1', 'ring-brand-500');
+            v.classList.add('border-gray-200', 'text-gray-600');
         });
 
-         element.classList.add(
-                'border-brand-500', 'bg-brand-50', 'text-brand-700', 'ring-1', 'ring-brand-500'
-    );   element.classList.remove(
-                'border-stone-200', 'text-stone-600'
-    );
+
+            element.classList.add('border-brand-500', 'bg-brand-50', 'text-brand-700', 'ring-1', 'ring-brand-500');
+            element.classList.remove('border-gray-200', 'text-gray-600');
+
     };
 
     // افزودن به سبد خرید
