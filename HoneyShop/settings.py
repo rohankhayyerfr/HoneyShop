@@ -150,7 +150,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # یا os.path.join(BASE_DIR, 'staticfil
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/media'
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CART_SESSION_ID = 'cart'
 
 #PayPal
