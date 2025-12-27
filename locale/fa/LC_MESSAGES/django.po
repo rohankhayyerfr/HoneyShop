@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-26 14:29+0200\n"
+"POT-Creation-Date: 2025-12-26 16:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: ROHAN KHAYYER <ROHANKHAYYERDEV@GMAIL.COM>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgstr ""
 msgid "مرا به خاطر بسپار"
 msgstr ""
 
-#: .\templates\accounts\login.html:86 .\templates\base.html:188
+#: .\templates\accounts\login.html:86 .\templates\base.html:197
 msgid "ورود به حساب"
 msgstr ""
 
@@ -120,7 +120,7 @@ msgstr ""
 msgid "به خانواده بزرگ دوست‌داران طبیعت بپیوندید."
 msgstr ""
 
-#: .\templates\accounts\register.html:36
+#: .\templates\accounts\register.html:36 .\templates\orders\checkout.html:34
 msgid "نام و نام خانوادگی"
 msgstr ""
 
@@ -179,152 +179,165 @@ msgid ""
 "باخبر می‌شوید."
 msgstr ""
 
-#: .\templates\base.html:10
+#: .\templates\base.html:12
 msgid "عسل و خرمای نکتار | تجربه طعم اصیل طبیعت"
 msgstr ""
 
-#: .\templates\base.html:86
+#: .\templates\base.html:92
 msgid "عسل و خرمای نکتار"
 msgstr ""
 
-#: .\templates\base.html:91 .\templates\base.html:152
+#: .\templates\base.html:98 .\templates\base.html:161
 msgid "محصولات"
 msgstr ""
 
-#: .\templates\base.html:92 .\templates\base.html:155
+#: .\templates\base.html:99 .\templates\base.html:164
 msgid "مزایا"
 msgstr ""
 
-#: .\templates\base.html:93 .\templates\base.html:158 .\templates\base.html:279
-#: .\templates\home.html:37
+#: .\templates\base.html:100 .\templates\base.html:167
+#: .\templates\base.html:288 .\templates\home.html:37
 msgid "درباره ما"
 msgstr ""
 
-#: .\templates\base.html:123 .\templates\base.html:194
+#: .\templates\base.html:132 .\templates\base.html:203
 msgid "ورود"
 msgstr ""
 
-#: .\templates\base.html:140
+#: .\templates\base.html:149
 msgid "منوی نکتار"
 msgstr ""
 
-#: .\templates\base.html:162
+#: .\templates\base.html:171
 msgid "تغییر زبان"
 msgstr ""
 
-#: .\templates\base.html:174
+#: .\templates\base.html:183
 msgid "ورود / ثبت‌نام"
 msgstr ""
 
-#: .\templates\base.html:207 .\templates\cart\cart.html:9
+#: .\templates\base.html:216 .\templates\orders\checkout.html:12
 msgid "سبد خرید"
 msgstr ""
 
-#: .\templates\base.html:211 .\templates\base.html:436
+#: .\templates\base.html:220 .\templates\base.html:445
 msgid "سبد خرید خالی است"
 msgstr ""
 
-#: .\templates\base.html:214 .\templates\cart\cart.html:61
+#: .\templates\base.html:223
 msgid "تسویه حساب"
 msgstr ""
 
-#: .\templates\base.html:239
+#: .\templates\base.html:248
 msgid "نکتار"
 msgstr ""
 
-#: .\templates\base.html:243
+#: .\templates\base.html:252
 msgid ""
 "نکتار، پلی است میان نخلستان‌های جنوب و کندوهای کوهستان با سفره شما. ما "
 "متعهدیم که طعم واقعی طبیعت را بدون واسطه و با بالاترین کیفیت به دست شما "
 "برسانیم."
 msgstr ""
 
-#: .\templates\base.html:259
+#: .\templates\base.html:268
 msgid "دسترسی سریع"
 msgstr ""
 
-#: .\templates\base.html:264
+#: .\templates\base.html:273
 msgid "صفحه اصلی"
 msgstr ""
 
-#: .\templates\base.html:269
+#: .\templates\base.html:278
 msgid "فروشگاه محصولات"
 msgstr ""
 
-#: .\templates\base.html:274
+#: .\templates\base.html:283
 msgid "بلاگ آموزشی"
 msgstr ""
 
-#: .\templates\base.html:288
+#: .\templates\base.html:297
 msgid "خدمات مشتریان"
 msgstr ""
 
-#: .\templates\base.html:293
+#: .\templates\base.html:302
 msgid "سوالات متداول"
 msgstr ""
 
-#: .\templates\base.html:298
+#: .\templates\base.html:307
 msgid "رویه ارسال سفارش"
 msgstr ""
 
-#: .\templates\base.html:303
+#: .\templates\base.html:312
 msgid "حریم خصوصی"
 msgstr ""
 
-#: .\templates\base.html:308
+#: .\templates\base.html:317
 msgid "تماس با ما"
 msgstr ""
 
-#: .\templates\base.html:315
+#: .\templates\base.html:324
 msgid "همراه نکتار باشید"
 msgstr ""
 
-#: .\templates\base.html:316
+#: .\templates\base.html:325
 msgid "با عضویت در خبرنامه از تخفیف‌های ویژه باخبر شوید."
 msgstr ""
 
-#: .\templates\base.html:319
+#: .\templates\base.html:328
 msgid "ایمیل شما..."
 msgstr ""
 
-#: .\templates\base.html:347
+#: .\templates\base.html:356
 msgid "© 2025 تمامی حقوق مادی و معنوی برای فروشگاه نکتار محفوظ است."
 msgstr ""
 
-#: .\templates\cart\cart.html:44
-msgid "خلاصه سفارش:"
-msgstr ""
-
-#: .\templates\cart\cart.html:46
-msgid "قیمت کل"
-msgstr ""
-
-#: .\templates\cart\cart.html:50
-msgid "تخفیف"
-msgstr ""
-
-#: .\templates\cart\cart.html:54
-msgid "هزینه ی ارسال"
-msgstr ""
-
-#: .\templates\cart\cart.html:58
-msgid "مجموع"
-msgstr ""
-
-#: .\templates\cart\cart.html:66
-msgid "سبد شما خالی است!"
-msgstr ""
-
-#: .\templates\cart\cart.html:67
-msgid "برای شروع چند محصول به سبد اضافه کنید."
+#: .\templates\cart\cart.html:14
+msgid "سبد خرید شما"
 msgstr ""
 
 #: .\templates\cart\cart.html:68
-msgid "ادامه خرید..."
+msgid "خلاصه سفارش"
+msgstr ""
+
+#: .\templates\cart\cart.html:72
+msgid "قیمت کالاها"
+msgstr ""
+
+#: .\templates\cart\cart.html:78
+msgid "سود شما از خرید"
+msgstr ""
+
+#: .\templates\cart\cart.html:84 .\templates\orders\checkout.html:95
+msgid "هزینه ارسال"
+msgstr ""
+
+#: .\templates\cart\cart.html:91 .\templates\orders\checkout.html:99
+#: .\templates\orders\payment.html:24
+msgid "مبلغ قابل پرداخت"
 msgstr ""
 
 #: .\templates\cart\cart.html:100
-msgid "آیا می‌خواهید این محصول را حذف کنید؟"
+msgid "ادامه جهت تسویه حساب"
+msgstr ""
+
+#: .\templates\cart\cart.html:105
+msgid " محاسبه هزینه ارسال در مرحله بعد انجام می‌شود."
+msgstr ""
+
+#: .\templates\cart\cart.html:116
+msgid "سبد خرید شما خالی است!"
+msgstr ""
+
+#: .\templates\cart\cart.html:117
+msgid "می‌توانید برای مشاهده محصولات به فروشگاه بروید."
+msgstr ""
+
+#: .\templates\cart\cart.html:119
+msgid "بازگشت به فروشگاه"
+msgstr ""
+
+#: .\templates\cart\cart.html:154
+msgid "آیا از حذف این محصول مطمئن هستید؟"
 msgstr ""
 
 #: .\templates\home.html:8
@@ -405,15 +418,83 @@ msgid ""
 "ما با هدف رساندن محصولات اصیل ایرانی به سفره شما فعالیت خود را آغاز کردیم."
 msgstr ""
 
-#: .\templates\products\detail.html:307
+#: .\templates\orders\checkout.html:16
+msgid "اطلاعات ارسال"
+msgstr ""
+
+#: .\templates\orders\checkout.html:19
+msgid "پرداخت"
+msgstr ""
+
+#: .\templates\orders\checkout.html:29
+msgid "جزئیات ارسال سفارش"
+msgstr ""
+
+#: .\templates\orders\checkout.html:35
+msgid "مثلاً: علی رضایی"
+msgstr ""
+
+#: .\templates\orders\checkout.html:41
+msgid "شماره تماس"
+msgstr ""
+
+#: .\templates\orders\checkout.html:46
+msgid "ایمیل "
+msgstr ""
+
+#: .\templates\orders\checkout.html:53
+msgid "آدرس دقیق پستی"
+msgstr ""
+
+#: .\templates\orders\checkout.html:54
+msgid "استان، شهر، خیابان، پلاک و واحد..."
+msgstr ""
+
+#: .\templates\orders\checkout.html:62
+msgid "خلاصه سبد خرید"
+msgstr ""
+
+#: .\templates\orders\checkout.html:85
+msgid "تعداد"
+msgstr ""
+
+#: .\templates\orders\checkout.html:109
+msgid "ادامه به درگاه پرداخت"
+msgstr ""
+
+#: .\templates\orders\checkout.html:117
+msgid "پرداخت امن از طریق درگاه بانکی"
+msgstr ""
+
+#: .\templates\orders\payment.html:17
+msgid "درگاه پرداخت امن"
+msgstr ""
+
+#: .\templates\orders\payment.html:30
+msgid "شماره سفارش:"
+msgstr ""
+
+#: .\templates\orders\payment.html:36
+msgid "انتخاب روش پرداخت"
+msgstr ""
+
+#: .\templates\orders\payment.html:48
+msgid "در حال اتصال به درگاه..."
+msgstr ""
+
+#: .\templates\orders\payment.html:56
+msgid "انصراف و بازگشت"
+msgstr ""
+
+#: .\templates\products\detail.html:304
 msgid "لطفاً یک گزینه را انتخاب کنید"
 msgstr ""
 
-#: .\templates\products\detail.html:313
+#: .\templates\products\detail.html:310
 msgid "این گزینه موجود نیست"
 msgstr ""
 
-#: .\templates\products\detail.html:332
+#: .\templates\products\detail.html:329
 msgid "محصول به سبد خرید اضافه شد!"
 msgstr ""
 

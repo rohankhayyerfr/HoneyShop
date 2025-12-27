@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-26 14:28+0200\n"
+"POT-Creation-Date: 2025-12-26 16:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: ROHAN KHAYYER <ROHANKHAYYERDEV@GMAIL.COM>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgstr "Forgot Password?"
 msgid "مرا به خاطر بسپار"
 msgstr "Remember me"
 
-#: .\templates\accounts\login.html:86 .\templates\base.html:188
+#: .\templates\accounts\login.html:86 .\templates\base.html:197
 msgid "ورود به حساب"
 msgstr "Sign in to Account"
 
@@ -122,7 +122,7 @@ msgstr "Register"
 msgid "به خانواده بزرگ دوست‌داران طبیعت بپیوندید."
 msgstr "Join our community of nature lovers."
 
-#: .\templates\accounts\register.html:36
+#: .\templates\accounts\register.html:36 .\templates\orders\checkout.html:34
 msgid "نام و نام خانوادگی"
 msgstr "Full Name"
 
@@ -183,60 +183,60 @@ msgstr ""
 "By joining Nektar, be the first to discover fresh seasonal harvests and "
 "exclusive discounts."
 
-#: .\templates\base.html:10
+#: .\templates\base.html:12
 msgid "عسل و خرمای نکتار | تجربه طعم اصیل طبیعت"
 msgstr "Buy Natural Honey & Nectar Dates | Authentic Taste Experience"
 
-#: .\templates\base.html:86
+#: .\templates\base.html:92
 msgid "عسل و خرمای نکتار"
 msgstr "Nectar Honey & Dates"
 
-#: .\templates\base.html:91 .\templates\base.html:152
+#: .\templates\base.html:98 .\templates\base.html:161
 msgid "محصولات"
 msgstr "Products"
 
-#: .\templates\base.html:92 .\templates\base.html:155
+#: .\templates\base.html:99 .\templates\base.html:164
 msgid "مزایا"
 msgstr "Benefits"
 
-#: .\templates\base.html:93 .\templates\base.html:158 .\templates\base.html:279
-#: .\templates\home.html:37
+#: .\templates\base.html:100 .\templates\base.html:167
+#: .\templates\base.html:288 .\templates\home.html:37
 msgid "درباره ما"
 msgstr "About Us"
 
-#: .\templates\base.html:123 .\templates\base.html:194
+#: .\templates\base.html:132 .\templates\base.html:203
 msgid "ورود"
 msgstr "Sign In"
 
-#: .\templates\base.html:140
+#: .\templates\base.html:149
 msgid "منوی نکتار"
 msgstr "Nektar Menu"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:171
 msgid "تغییر زبان"
 msgstr "Change Language"
 
-#: .\templates\base.html:174
+#: .\templates\base.html:183
 msgid "ورود / ثبت‌نام"
 msgstr "Login / Sign Up"
 
-#: .\templates\base.html:207 .\templates\cart\cart.html:9
+#: .\templates\base.html:216 .\templates\orders\checkout.html:12
 msgid "سبد خرید"
 msgstr "Shopping Cart"
 
-#: .\templates\base.html:211 .\templates\base.html:436
+#: .\templates\base.html:220 .\templates\base.html:445
 msgid "سبد خرید خالی است"
 msgstr "Empty Cart"
 
-#: .\templates\base.html:214 .\templates\cart\cart.html:61
+#: .\templates\base.html:223
 msgid "تسویه حساب"
 msgstr "Checkout"
 
-#: .\templates\base.html:239
+#: .\templates\base.html:248
 msgid "نکتار"
 msgstr "Nectar"
 
-#: .\templates\base.html:243
+#: .\templates\base.html:252
 msgid ""
 "نکتار، پلی است میان نخلستان‌های جنوب و کندوهای کوهستان با سفره شما. ما "
 "متعهدیم که طعم واقعی طبیعت را بدون واسطه و با بالاترین کیفیت به دست شما "
@@ -246,101 +246,111 @@ msgstr ""
 "to your table. We are committed to delivering the true taste of nature "
 "directly and with the highest quality."
 
-#: .\templates\base.html:259
+#: .\templates\base.html:268
 msgid "دسترسی سریع"
 msgstr "Quick Access"
 
-#: .\templates\base.html:264
+#: .\templates\base.html:273
 msgid "صفحه اصلی"
 msgstr "Homepage"
 
-#: .\templates\base.html:269
+#: .\templates\base.html:278
 msgid "فروشگاه محصولات"
 msgstr "Shop"
 
-#: .\templates\base.html:274
+#: .\templates\base.html:283
 msgid "بلاگ آموزشی"
 msgstr "Blog"
 
-#: .\templates\base.html:288
+#: .\templates\base.html:297
 msgid "خدمات مشتریان"
 msgstr "Customer Support"
 
-#: .\templates\base.html:293
+#: .\templates\base.html:302
 msgid "سوالات متداول"
 msgstr "FAQ"
 
-#: .\templates\base.html:298
+#: .\templates\base.html:307
 msgid "رویه ارسال سفارش"
 msgstr "How we will send you?"
 
-#: .\templates\base.html:303
+#: .\templates\base.html:312
 msgid "حریم خصوصی"
 msgstr "Privacy"
 
-#: .\templates\base.html:308
+#: .\templates\base.html:317
 msgid "تماس با ما"
 msgstr "Contact Us"
 
-#: .\templates\base.html:315
+#: .\templates\base.html:324
 msgid "همراه نکتار باشید"
 msgstr "Stay Connected with Nectar"
 
-#: .\templates\base.html:316
+#: .\templates\base.html:325
 msgid "با عضویت در خبرنامه از تخفیف‌های ویژه باخبر شوید."
 msgstr "Subscribe to our newsletter to get special offers."
 
-#: .\templates\base.html:319
+#: .\templates\base.html:328
 msgid "ایمیل شما..."
 msgstr "Your Email"
 
-#: .\templates\base.html:347
+#: .\templates\base.html:356
 msgid "© 2025 تمامی حقوق مادی و معنوی برای فروشگاه نکتار محفوظ است."
 msgstr "© 2025 All rights reserved by Nektar Store."
 
-#: .\templates\cart\cart.html:44
-msgid "خلاصه سفارش:"
-msgstr "Order Summary:"
-
-
-#: .\templates\cart\cart.html:46
-msgid "قیمت کل"
-msgstr "Total Price"
-
-
-#: .\templates\cart\cart.html:50
-msgid "تخفیف"
-msgstr "Discount"
-
-
-#: .\templates\cart\cart.html:54
-msgid "هزینه ی ارسال"
-msgstr "Shipping Fee"
-
-#: .\templates\cart\cart.html:58
-msgid "مجموع"
-msgstr "Total"
-
-
-#: .\templates\cart\cart.html:66
-msgid "سبد شما خالی است!"
-msgstr "Your cart is empty!"
-
-
-#: .\templates\cart\cart.html:67
-msgid "برای شروع چند محصول به سبد اضافه کنید."
-msgstr "Add some products to the cart to get started."
-
+#: .\templates\cart\cart.html:14
+msgid "سبد خرید شما"
+msgstr "Shopping Cart"
 
 #: .\templates\cart\cart.html:68
-msgid "ادامه خرید..."
-msgstr "Continue Shopping..."
+msgid "خلاصه سفارش"
+msgstr "Order Summary:"
+
+#: .\templates\cart\cart.html:72
+msgid "قیمت کالاها"
+msgstr "Items price"
+
+#: .\templates\cart\cart.html:78
+msgid "سود شما از خرید"
+msgstr "Your Savings"
+
+
+#: .\templates\cart\cart.html:84 .\templates\orders\checkout.html:95
+
+msgid "هزینه ارسال"
+msgstr "Shipping Fee"
+
+#: .\templates\cart\cart.html:91 .\templates\orders\checkout.html:99
+#: .\templates\orders\payment.html:24
+msgid "مبلغ قابل پرداخت"
+msgstr "Amount Payable"
 
 
 #: .\templates\cart\cart.html:100
-msgid "آیا می‌خواهید این محصول را حذف کنید؟"
+msgid "ادامه جهت تسویه حساب"
+msgstr "Checkout"
+
+#: .\templates\cart\cart.html:105
+msgid " محاسبه هزینه ارسال در مرحله بعد انجام می‌شود."
+msgstr "Shipping costs will be calculated in the next step."
+
+
+#: .\templates\cart\cart.html:116
+msgid "سبد خرید شما خالی است!"
+msgstr "Empty Cart"
+
+#: .\templates\cart\cart.html:117
+msgid "می‌توانید برای مشاهده محصولات به فروشگاه بروید."
 msgstr "Do you want to remove this product?"
 
+#: .\templates\cart\cart.html:119
+msgid "بازگشت به فروشگاه"
+msgstr "Back to home"
+
+#: .\templates\cart\cart.html:154
+
+msgid "آیا از حذف این محصول مطمئن هستید؟"
+msgstr "Do you want to remove this product?"
 
 #: .\templates\home.html:8
 msgid "خرید عسل طبیعی و خرمای نکتار | ارسال سریع"
@@ -429,50 +439,120 @@ msgid ""
 msgstr ""
 "We started our mission to bring authentic Iranian products to your table."
 
-#: .\templates\products\detail.html:307
+#: .\templates\orders\checkout.html:16
+msgid "اطلاعات ارسال"
+msgstr "Shipping Information"
+
+
+#: .\templates\orders\checkout.html:19
+msgid "پرداخت"
+msgstr "Payment"
+
+#: .\templates\orders\checkout.html:29
+msgid "جزئیات ارسال سفارش"
+msgstr "Order Shipping Details"
+
+
+#: .\templates\orders\checkout.html:35
+msgid "مثلاً: علی رضایی"
+msgstr "Example: John Smith"
+
+#: .\templates\orders\checkout.html:41
+msgid "شماره تماس"
+msgstr "Mobile Number"
+
+#: .\templates\orders\checkout.html:46
+msgid "ایمیل "
+msgstr "Your Email"
+
+#: .\templates\orders\checkout.html:53
+msgid "آدرس دقیق پستی"
+msgstr "Full Mailing Address"
+
+
+#: .\templates\orders\checkout.html:54
+msgid "استان، شهر، خیابان، پلاک و واحد..."
+msgstr "State, City, Street, Building Number, and Unit..."
+
+
+#: .\templates\orders\checkout.html:62
+msgid "خلاصه سبد خرید"
+msgstr "Cart Summary"
+
+
+#: .\templates\orders\checkout.html:85
+msgid "تعداد"
+msgstr "Quantity"
+
+
+#: .\templates\orders\checkout.html:109
+msgid "ادامه به درگاه پرداخت"
+msgstr "Proceed to Payment Gateway"
+
+#: .\templates\orders\checkout.html:117
+msgid "پرداخت امن از طریق درگاه بانکی"
+msgstr "Secure Payment via Bank Gateway"
+
+#: .\templates\orders\payment.html:17
+msgid "درگاه پرداخت امن"
+msgstr "Secure Payment Gateway"
+
+
+#: .\templates\orders\payment.html:30
+msgid "شماره سفارش:"
+msgstr "Order Number:"
+
+
+#: .\templates\orders\payment.html:36
+msgid "انتخاب روش پرداخت"
+msgstr "Select Payment Method"
+
+
+#: .\templates\orders\payment.html:48
+msgid "در حال اتصال به درگاه..."
+msgstr "Connecting to Payment Gateway..."
+
+
+#: .\templates\orders\payment.html:56
+msgid "انصراف و بازگشت"
+msgstr "Cancel and Return"
+
+
+#: .\templates\products\detail.html:304
 msgid "لطفاً یک گزینه را انتخاب کنید"
 msgstr "Please select an option"
 
-
-#: .\templates\products\detail.html:313
+#: .\templates\products\detail.html:310
 msgid "این گزینه موجود نیست"
 msgstr "This option is not available"
 
-
-#: .\templates\products\detail.html:332
+#: .\templates\products\detail.html:329
 msgid "محصول به سبد خرید اضافه شد!"
 msgstr "Product added to the cart!"
-
 
 #: .\templates\products\list.html:10
 msgid "محصولات نکتار"
 msgstr "Nectar Products"
 
-
 #: .\templates\products\list.html:11
 msgid "مجموعه‌ای از بهترین‌های طبیعت"
 msgstr "A collection of nature’s best"
-
 
 #: .\templates\products\list.html:21
 msgid "دسته‌بندی‌ها"
 msgstr "Categories"
 
-
 #: .\templates\products\list.html:23
 msgid "عسل طبیعی"
 msgstr "Natural Honey"
-
 
 #: .\templates\products\list.html:24
 msgid "خرما و رطب"
 msgstr "Dates and Fresh Dates"
 
-
 #: .\templates\products\list.html:55
 msgid "افزودن به سبد خرید"
 msgstr "Add to Cart"
-
 
 #: .\templates\products\list.html:71 .\templates\products\list.html:75
 msgid "تومان"
@@ -482,6 +562,20 @@ msgstr "USD"
 msgid "ناموجود"
 msgstr "Out of Stock"
 
+#~ msgid "تخفیف"
+#~ msgstr "Discount"
+
+#~ msgid "مجموع"
+#~ msgstr "Total"
+
+#~ msgid "سبد شما خالی است!"
+#~ msgstr "Your cart is empty!"
+
+#~ msgid "برای شروع چند محصول به سبد اضافه کنید."
+#~ msgstr "Add some products to the cart to get started."
+
+#~ msgid "ادامه خرید..."
+#~ msgstr "Continue Shopping..."
 
 #~ msgid "عسل کوهی ممتاز"
 #~ msgstr "Premium Mountain Honey"
@@ -491,9 +585,6 @@ msgstr "Out of Stock"
 
 #~ msgid "شماره موبایل یا ایمیل"
 #~ msgstr "Mobile Number or Email"
-
-#~ msgid "شماره موبایل"
-#~ msgstr "Mobile Number"
 
 #~ msgid "بستن"
 #~ msgstr "Close"

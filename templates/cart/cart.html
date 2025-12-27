@@ -4,74 +4,127 @@
 {% load humanize %}
 
 {% block content %}
-<div class="bg-gray-50 min-h-screen py-10 font-en text-gray-800">
-    <div class="container mx-auto px-4 max-w-7xl animate-fade-in-up">
-        <h1 class="text-3xl font-extrabold text-brand-900 mb-8">{% trans 'سبد خرید' %}</h1>
+<div class="bg-stone-50 min-h-screen py-8 font-fa text-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in-up">
+
+        <h1 class="text-2xl md:text-3xl font-extrabold text-stone-900 mb-8 flex items-center gap-3">
+            <span class="bg-stone-200 p-2 rounded-xl">
+                <svg class="w-6 h-6 text-stone-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+            </span>
+            {% trans 'سبد خرید شما' %}
+        </h1>
 
         {% if cart and cart.items.exists %}
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="flex flex-col lg:flex-row gap-8 relative items-start">
 
-            <!-- سبد خرید لیست محصولات -->
-            <div class="lg:col-span-8 space-y-4">
+            <div class="w-full lg:flex-1 space-y-4">
                 {% for item in cart.items %}
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-4 flex justify-between items-center">
-                    <div class="flex items-center gap-4">
-                        {% with first_image=item.product.images.all.0 %}
-                            <img src="{{ first_image.image.url }}" alt="{{ item.product.name }}" class="w-20 h-20 object-cover rounded-xl">
+                <div class="group bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-stone-100 hover:shadow-md transition-all duration-300">
+                    <div class="flex flex-col sm:flex-row items-center gap-6">
+
+                        <div class="shrink-0 relative">
+                            {% with first_image=item.product.images.all.0 %}
+                            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl overflow-hidden bg-stone-100 border border-stone-200">
+                                <img src="{{ first_image.image.url }}" alt="{{ item.product.name }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            </div>
                             {% endwith %}
-                        <div>
-                            <h2 class="font-bold text-lg">{{ item.product.name }}</h2>
+                        </div>
+
+                        <div class="flex-1 w-full text-center sm:text-right space-y-2">
+                            <h2 class="font-bold text-lg text-stone-900 leading-tight">{{ item.product.name }}</h2>
                             {% if item.variant %}
-                            <p class="text-sm text-gray-500">{{ item.variant.label }} ( Weight {{ item.variant.weight }}kg )</p>
+                                <div class="inline-flex items-center gap-1 bg-stone-50 px-2 py-1 rounded-lg border border-stone-100">
+                                    <span class="text-xs text-stone-500">{{ item.variant.label }}</span>
+                                    <span class="text-xs text-stone-400">|</span>
+                                    <span class="text-xs text-stone-500 font-en">{{ item.variant.weight }}kg</span>
+                                </div>
                             {% endif %}
                         </div>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <div class="flex items-center border border-gray-500 rounded-xl overflow-hidden ">
-                            <button type="button" onclick="updateCartItem('{{ item.id }}', -1)" class="w-10 h-10 text-xl font-black text-gray-700 hover:bg-gray-100 transition">-</button>
-                            <input type="text" value="{{ item.quantity }}" id="qty-{{ item.id }}" class="w-12 h-10 text-center font-bold text-gray-900 bg-white border-0" readonly>
-                            <button type="button" onclick="updateCartItem('{{ item.id }}', 1)" class="w-10 h-10 text-xl font-black text-gray-700 hover:bg-gray-100 transition">+</button>
+
+                        <div class="w-full sm:w-auto flex flex-row-reverse sm:flex-col items-center justify-between sm:justify-center gap-4 border-t sm:border-t-0 border-stone-100 pt-4 sm:pt-0 mt-2 sm:mt-0">
+
+                            <div class="text-left sm:text-left">
+                                <span class="block font-black text-lg text-stone-800 tracking-tight">{{ item.total_price|intcomma }}</span>
+                                <span class="text-[10px] text-stone-400 block sm:text-left">USD</span>
+                            </div>
+
+                            <div class="flex items-center bg-stone-50 rounded-xl border border-stone-200 p-1 h-10">
+                                <button type="button" onclick="updateCartItem('{{ item.id }}', 1)" class="w-8 h-full flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm text-stone-600 transition">+</button>
+                                <input type="text" value="{{ item.quantity }}" id="qty-{{ item.id }}" class="w-8 bg-transparent text-center font-bold text-stone-900 text-sm focus:outline-none" readonly>
+                                <button type="button" onclick="updateCartItem('{{ item.id }}', -1)" class="w-8 h-full flex items-center justify-center rounded-lg hover:bg-white hover:shadow-sm text-stone-600 transition">-</button>
+                            </div>
                         </div>
-                        <span class="font-bold text-lg">${{ item.total_price|intcomma }}</span>
-                        <button onclick="removeCartItem('{{ item.id }}')" class="text-red-600 hover:text-red-800 transition font-bold text-lg">&times;</button>
+
+                        <button onclick="removeCartItem('{{ item.id }}')" class="absolute top-4 left-4 sm:static text-stone-300 hover:text-red-500 transition p-2" title="حذف">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        </button>
                     </div>
                 </div>
                 {% endfor %}
             </div>
 
-            <!-- خلاصه سبد خرید -->
-            <div class="lg:col-span-4 bg-white rounded-3xl shadow-xl border border-gray-200 p-6 lg:p-8">
-                <h3 class="text-xl font-bold text-brand-900 mb-4">{% trans 'خلاصه سفارش:' %}</h3>
-                <div class="flex justify-between mb-2">
-                    <span>{% trans 'قیمت کل' %}</span>
-                    <span>${{ cart.sub_total|intcomma }}</span>
+            <div class="w-full lg:w-96 shrink-0 lg:sticky lg:top-8">
+                <div class="bg-white rounded-2xl shadow-lg shadow-stone-200/50 border border-stone-100 p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-stone-900 mb-6 border-b border-stone-100 pb-4">{% trans 'خلاصه سفارش' %}</h3>
+
+                    <div class="space-y-4 mb-6">
+                        <div class="flex justify-between items-center text-sm text-stone-600">
+                            <span>{% trans 'قیمت کالاها' %}</span>
+                            <span class="font-bold font-en">{{ cart.sub_total|intcomma }}</span>
+                        </div>
+
+                        {% if cart.discount %}
+                        <div class="flex justify-between items-center text-sm text-red-500">
+                            <span>{% trans 'سود شما از خرید' %}</span>
+                            <span class="font-bold font-en">{{ cart.discount|intcomma }}-</span>
+                        </div>
+                        {% endif %}
+
+                        <div class="flex justify-between items-center text-sm text-stone-600">
+                            <span>{% trans 'هزینه ارسال' %}</span>
+                            <span class="font-bold font-en text-stone-900">{{ cart.shipping_fee|intcomma }}</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-stone-100 pt-4 mb-6">
+                        <div class="flex justify-between items-end">
+                            <span class="font-bold text-stone-900">{% trans 'مبلغ قابل پرداخت' %}</span>
+                            <div class="text-left">
+                                <span class="block text-2xl font-black text-brand-600 font-en tracking-tight">{{ cart.final_total|intcomma }}</span>
+                                <span class="text-[10px] text-stone-400 block text-left">USD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="{% url 'checkout' %}" class="w-full flex justify-center items-center gap-2 bg-stone-900 hover:bg-brand-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-brand-500/30 transform hover:-translate-y-1">
+                        {% trans 'ادامه جهت تسویه حساب' %}
+                        <svg class="w-4 h-4 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    </a>
+
+                    <p class="text-[10px] text-stone-400 text-center mt-4">
+                       {% trans ' محاسبه هزینه ارسال در مرحله بعد انجام می‌شود.' %}
+                    </p>
                 </div>
-                <div class="flex justify-between mb-2">
-                    <span>{% trans 'تخفیف' %}</span>
-                    <span>${{ cart.discount|intcomma }}</span>
-                </div>
-                <div class="flex justify-between mb-4">
-                    <span>{% trans 'هزینه ی ارسال' %}</span>
-                    <span>${{ cart.shipping_fee|intcomma }}</span>
-                </div>
-                <div class="border-t border-gray-200 pt-4 flex justify-between items-center mb-4">
-                    <span class="font-bold text-lg">{% trans 'مجموع' %}</span>
-                    <span class="font-bold text-xl text-brand-900">${{ cart.final_total|intcomma }}</span>
-                </div>
-                <a href="{% url 'checkout' %}" class="block text-center bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl transition">{% trans 'تسویه حساب' %}</a>
             </div>
+
         </div>
         {% else %}
-        <div class="text-center py-20">
-            <h2 class="text-2xl font-bold mb-4">{% trans 'سبد شما خالی است!' %}</h2>
-            <p class="text-gray-600 mb-6">{% trans 'برای شروع چند محصول به سبد اضافه کنید.' %}</p>
-            <a href="/" class="inline-block bg-brand-600 hover:bg-brand-500 text-white font-bold py-2 px-6 rounded-xl transition">{% trans 'ادامه خرید...' %}</a>
+        <div class="bg-white rounded-3xl border border-stone-100 p-12 text-center shadow-sm">
+            <div class="w-24 h-24 bg-stone-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-10 h-10 text-stone-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            </div>
+            <h2 class="text-xl font-bold text-stone-900 mb-2">{% trans 'سبد خرید شما خالی است!' %}</h2>
+            <p class="text-stone-500 mb-8 text-sm">{% trans 'می‌توانید برای مشاهده محصولات به فروشگاه بروید.' %}</p>
+            <a href="/" class="inline-flex items-center justify-center px-8 py-3 bg-stone-900 text-white font-bold rounded-xl hover:bg-brand-600 transition-colors shadow-lg">
+                {% trans 'بازگشت به فروشگاه' %}
+            </a>
         </div>
         {% endif %}
     </div>
 </div>
 
 <script>
+// منطق جاوااسکریپت بدون تغییر باقی ماند
 function updateCartItem(itemId, delta) {
     const qtyInput = document.getElementById(`qty-${itemId}`);
     let qty = parseInt(qtyInput.value);
@@ -92,12 +145,13 @@ function updateCartItem(itemId, delta) {
     })
     .then(res => res.json())
     .then(data => {
-        if(data.success) location.reload(); // برای ساده بودن، صفحه ریلود می‌شود
+        if(data.success) location.reload();
     });
 }
 
 function removeCartItem(itemId) {
-    if(!confirm("{% trans 'آیا می‌خواهید این محصول را حذف کنید؟' %}")) return;
+    // از SweetAlert یا Confirm معمولی استفاده کنید
+    if(!confirm("{% trans 'آیا از حذف این محصول مطمئن هستید؟' %}")) return;
 
     fetch("{% url 'cart:remove_item' %}", {
         method: "POST",
