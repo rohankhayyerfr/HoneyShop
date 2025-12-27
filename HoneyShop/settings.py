@@ -28,8 +28,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['honeyshop-h3qt.onrender.com']
-CSRF_TRUSTED_ORIGINS = ['https://honeyshop-h3qt.onrender.com']
+ALLOWED_HOSTS = ['honeyshop-h3qt.onrender.com', '127.0.0.1', 'nectarshops.com', 'www.nectarshops.com']
+
 
 
 # Application definition
