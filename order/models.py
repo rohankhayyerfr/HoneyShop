@@ -1,4 +1,6 @@
 # orders/models.py
+import random
+
 from django.db import models
 from django.conf import settings
 from store.models import Product, ProductVariant
@@ -27,6 +29,19 @@ class Order(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
 
     created_at = models.DateTimeField(auto_now_add=True)
+
+    order_number = models.CharField(max_length=5, unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.order_number:
+            self.order_number = self.generate_order_number()
+        super().save(*args, **kwargs)
+
+    def generate_order_number(self):
+        while True:
+            number = str(random.randint(10000, 99999))  # همیشه 5 رقمی
+            if not Order.objects.filter(order_number=number).exists():
+                return number
 
     def __str__(self):
         return f"Order #{self.id}"
