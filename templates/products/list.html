@@ -1,96 +1,107 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load i18n %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block content %}
 <body class="bg-stone-50 font-fa text-stone-800">
-
   <div class="bg-stone-800 text-white py-10 text-center">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-          <h1 class="text-3xl font-bold mb-2">{% trans "محصولات نکتار" %}</h1>
-          <p class="text-stone-300 text-sm">{% trans "مجموعه‌ای از بهترین‌های طبیعت" %}</p>
-      </div>
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h1 class="text-3xl font-bold mb-2">{% trans "محصولات نکتار" %}</h1>
+      <p class="text-stone-300 text-sm">
+        {% trans "مجموعه‌ای از بهترین‌های طبیعت" %}
+      </p>
+    </div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
     <div class="flex flex-col lg:flex-row gap-8">
-
       <aside class="hidden lg:block w-64 flex-shrink-0">
-        <div class="bg-white p-5 rounded-xl border border-stone-200 sticky top-4">
-            <h3 class="font-bold text-lg mb-4 border-b pb-2">{% trans "دسته‌بندی‌ها" %}</h3>
-            <ul class="space-y-3 text-sm">
-                <li><label class="flex items-center gap-2 cursor-pointer hover:text-brand-600"><input type="checkbox" class="rounded border-stone-300 text-brand-600 focus:ring-brand-500"><span>{% trans "عسل طبیعی" %}</span></label></li>
-                <li><label class="flex items-center gap-2 cursor-pointer hover:text-brand-600"><input type="checkbox" class="rounded border-stone-300 text-brand-600 focus:ring-brand-500"><span>{% trans "خرما و رطب" %}</span></label></li>
-            </ul>
+        <div
+          class="bg-white p-5 rounded-xl border border-stone-200 sticky top-4"
+        >
+          <h3 class="font-bold text-lg mb-4 border-b pb-2">
+            {% trans "دسته‌بندی‌ها" %}
+          </h3>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <label
+                class="flex items-center gap-2 cursor-pointer hover:text-brand-600"
+                ><input
+                  type="checkbox"
+                  class="rounded border-stone-300 text-brand-600 focus:ring-brand-500"
+                /><span>{% trans "عسل طبیعی" %}</span></label
+              >
+            </li>
+            <li>
+              <label
+                class="flex items-center gap-2 cursor-pointer hover:text-brand-600"
+                ><input
+                  type="checkbox"
+                  class="rounded border-stone-300 text-brand-600 focus:ring-brand-500"
+                /><span>{% trans "خرما و رطب" %}</span></label
+              >
+            </li>
+          </ul>
         </div>
       </aside>
 
       <main class="flex-1">
-
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-{% for product in products %}
+          {% for product in products %}
 
-    <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div
+            class="group bg-white rounded-2xl border border-stone-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <!-- IMAGE -->
+            <div class="relative aspect-square overflow-hidden bg-stone-100">
+              {% with first_image=product.images.all.0 %}
+              <img
+                src="{{ first_image.image.url }}"
+                alt="{{ product.name }}"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              {% endwith %}
+              <div
+                class="w-full h-full flex items-center justify-center text-sm text-stone-400"
+              >
+                No image
+              </div>
 
-        <!-- IMAGE -->
-        <div class="relative aspect-square overflow-hidden bg-stone-100">
-
-            {% with first_image=item.product.images.all.0 %}
-                        <img src="{{ first_image.image.url }}"
-                             alt="{{ product.name }}"
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-            {% endwith %}
-                <div class="w-full h-full flex items-center justify-center text-sm text-stone-400">
-                    No image
-                </div>
-
-
-            <div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/60 to-transparent">
-                <button class="w-full bg-brand-600 text-white py-3 rounded-xl font-bold text-sm">
-                    {% trans "افزودن به سبد خرید" %}
+              <div
+                class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <button
+                  class="w-full bg-brand-600 text-white py-3 rounded-xl font-bold text-sm"
+                >
+                  {% trans "افزودن به سبد خرید" %}
                 </button>
+              </div>
             </div>
-        </div>
 
-        <!-- PRICE -->
-        <div class="p-4 text-center">
-            <a href="{% url 'store:product_detail' product.slug %}" class="font-bold text-stone-900 mb-1 truncate">
+            <!-- PRICE -->
+            <div class="p-4 text-center">
+              <a
+                href="{% url 'store:product_detail' product.slug %}"
+                class="font-bold text-stone-900 mb-1 truncate"
+              >
                 {{ product.name }}
-            </a>
+              </a>
 
-            {% if product.variants.all %}
-                {% for v in product.variants.all %}
-                    {% if v.is_available and v.inventory > 0 %}
-                        {% if v.old_price %}
-                            <span class="text-xs line-through text-stone-400">
-                                {{ v.old_price }} {% trans "تومان" %}
-                            </span>
-                        {% endif %}
-                        <span class="font-bold text-brand-600 text-lg block">
-                            {{ v.price }} <span class="text-xs">{% trans "تومان" %}</span>
-                        </span>
-                    {% endif %}
-                {% endfor %}
-            {% else %}
-                <span class="text-sm text-red-500">
-                    {% trans "ناموجود" %}
-                </span>
-            {% endif %}
+              {% if product.variants.all %} {% for v in product.variants.all %}
+              {% if v.is_available and v.inventory > 0 %} {% if v.old_price %}
+              <span class="text-xs line-through text-stone-400">
+                {{ v.old_price }} {% trans "USD" %}
+              </span>
+              {% endif %}
+              <span class="font-bold text-brand-600 text-lg block">
+                {{ v.price }} <span class="text-xs">{% trans "USD" %}</span>
+              </span>
+              {% endif %} {% endfor %} {% else %}
+              <span class="text-sm text-red-500"> {% trans "ناموجود" %} </span>
+              {% endif %}
+            </div>
+          </div>
+
+          {% endfor %}
         </div>
-
-    </div>
-
-{% endfor %}
-</div>
-
-
-
-
-
       </main>
     </div>
   </div>
-
 </body>
 {% endblock %}
