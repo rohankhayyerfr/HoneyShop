@@ -1,13 +1,21 @@
-# orders/utils.py
+from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
-from weasyprint import HTML
-import tempfile
+from django.conf import settings
 
-def generate_invoice_pdf(order):
-    html_string = render_to_string('orders/invoice.html', {'order': order})
-    html = HTML(string=html_string)
+def send_invoice_email(order):
+    subject = f"فاکتور سفارش #{order.id}"
+    to_email = order.email
 
-    result = tempfile.NamedTemporaryFile(delete=True, suffix='.pdf')
-    html.write_pdf(target=result.name)
+    html_content = render_to_string(
+        "orders/invoice.html",
+        {"order": order}
+    )
 
-    return result
+    email = EmailMultiAlternatives(
+        subject=subject,
+        body="فاکتور سفارش شما",
+        from_email=settings.EMAIL_HOST_USER,
+        to=[to_email]
+    )
+    email.attach_alternative(html_content, "text/html")
+    email.send()
