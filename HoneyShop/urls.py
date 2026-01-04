@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 import store
 from django.views.static import serve
-
+from store.views import custom_404
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import handler404
 from HoneyShop import settings
@@ -36,6 +36,8 @@ path('', include('store.urls')),
     path('accounts/', include('accounts.urls')),
     path('cart/', include('cart.urls')),
     path('orders/', include('order.urls')),
+    path('test-404/', lambda request: (_ for _ in ()).throw(Exception("Test 404"))),
+
 
 )
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
