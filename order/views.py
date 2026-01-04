@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from paypalcheckoutsdk.orders import OrdersCreateRequest, OrdersCaptureRequest
-from .emails import send_invoice_email
+from .email_utils import send_invoice_email
 from HoneyShop import settings
 from cart.models import Cart, CartItem
 from .models import Order, OrderItem
