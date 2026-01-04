@@ -64,61 +64,57 @@
     </div>
 </div>
 
-<script src="https://www.paypal.com/sdk/js?client-id={{ PAYPAL_CLIENT_ID }}&currency={{ PAYPAL_CURRENCY }}"></script>
+<script src="https://www.paypal.com/sdk/js?client-id={{ PAYPAL_CLIENT_ID }}&currency=USD"></script>
+
 <script>
-paypal.Buttons({
-    style: {
-        shape: 'rect',
-        color: 'gold',
-        layout: 'vertical',
-        label: 'pay'
-    },
-    createOrder: function (data, actions) {
-        return fetch("{% url 'create_paypal_order' order.id %}")
-            .then(res => res.json())
-            .then(data => {
-                if (data.error) {
-                    console.error('Order Creation Error:', data.error);
-                    alert('Somthing went wrong'); // هندل کردن خطای احتمالی
-                    throw new Error(data.error);
+    // نمایش لودر قبل از رندر شدن دکمه (اختیاری برای UX بهتر)
+    // document.getElementById('payment-loader').classList.remove('hidden');
+
+    paypal.Buttons({
+        style: {
+            shape:  'rect',
+            color:  'gold', // رنگ طلایی استاندارد پی‌پل اعتماد بیشتری ایجاد می‌کند
+            layout: 'vertical',
+            label:  'pay',
+        },
+        createOrder: function (data, actions) {
+            return fetch("{% url 'create_paypal_order' order.id %}")
+                .then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        console.error('Order Creation Error:', data.error);
+                        alert('خطا در ایجاد سفارش'); // هندل کردن خطای احتمالی
+                        return;
+                    }
+                    return data.id;
+                });
+        },
+        onApprove: function (data, actions) {
+            // نمایش لودینگ تمام صفحه یا غیرفعال کردن صفحه هنگام تایید
+            document.body.style.cursor = 'wait';
+
+            return fetch("{% url 'capture_paypal_order' order.id %}", {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": "{{ csrf_token }}",
+                    "Content-Type": "application/x-www-form-urlencoded" // معمولا برای ارسال فرم دیتا نیاز است
+                },
+                body: new URLSearchParams({
+                    paypal_order_id: data.orderID
+                })
+            }).then((response) => {
+                if (response.ok) {
+                    window.location.href = "{% url 'payment_success' %}";
+                } else {
+                    console.error('Capture Error');
+                    window.location.href = "{% url 'payment_failed' %}";
                 }
-                return data.id; // برمیگردونه PayPal order ID
             });
-    },
-    onApprove: function (data, actions) {
-        // نمایش لودینگ تمام صفحه
-        document.body.style.cursor = 'wait';
-
-        return fetch("{% url 'capture_paypal_order' order.id %}", {
-            method: "POST",
-            headers: {
-                "X-CSRFToken": "{{ csrf_token }}",
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: new URLSearchParams({
-                paypal_order_id: data.orderID
-            })
-        })
-        .then(response => response.json())
-        .then(result => {
-            if (result.success) {
-                // پرداخت موفق
-                window.location.href = "{% url 'payment_success' %}";
-            } else {
-                console.error('Capture Failed:', result.error);
-                window.location.href = "{% url 'payment_failed' %}";
-            }
-        })
-        .catch(err => {
-            console.error('Capture Exception:', err);
+        },
+        onError: function (err) {
+            console.error('PayPal Error:', err);
             window.location.href = "{% url 'payment_failed' %}";
-        });
-    },
-    onError: function (err) {
-        console.error('PayPal Error:', err);
-        window.location.href = "{% url 'payment_failed' %}";
-    }
-}).render('#paypal-button-container');
+        }
+    }).render('#paypal-button-container');
 </script>
-
 {% endblock %}
