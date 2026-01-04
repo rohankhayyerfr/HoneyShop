@@ -4,8 +4,6 @@ from .models import *
 from django.utils import translation
 from .utils import *
 
-# def custom_404(request, exception=None):
-#     return render(request, '404.html', status=404)
 
 def home(request):
     products = Product.objects.all()

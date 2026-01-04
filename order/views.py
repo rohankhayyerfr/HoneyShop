@@ -93,11 +93,6 @@ def capture_paypal_order(request, order_id):
         order.status = "paid"
         order.save()
 
-
-        if order.user:
-            Cart.objects.filter(user=order.user).delete()
-        else:
-            Cart.objects.filter(session_id=order.session_id).delete()
         return JsonResponse({"success": True})
 
     return JsonResponse({"success": False})
