@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#""
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-04 17:28+0200\n"
+"POT-Creation-Date: 2026-01-04 19:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: ROHAN KHAYYER <ROHANKHAYYERDEV@GMAIL.COM>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -64,7 +65,7 @@ msgstr "هل نسيت كلمة المرور؟"
 msgid "مرا به خاطر بسپار"
 msgstr "تذكرني"
 
-#: .\templates\accounts\login.html:86 .\templates\base.html:197
+#: .\templates\accounts\login.html:86 .\templates\base.html:203
 msgid "ورود به حساب"
 msgstr "تسجيل الدخول إلى الحساب"
 
@@ -192,52 +193,56 @@ msgstr "عسل وتمور نكتار | تجربة الطعم الأصيل للط
 msgid "عسل و خرمای نکتار"
 msgstr "عسل و تمر نکتار"
 
-#: .\templates\base.html:98 .\templates\base.html:161
+#: .\templates\base.html:98 .\templates\base.html:167
 msgid "محصولات"
 msgstr "المنتجات"
 
-#: .\templates\base.html:99 .\templates\base.html:164
+#: .\templates\base.html:99 .\templates\base.html:170
 msgid "مزایا"
 msgstr "المزايا"
 
-#: .\templates\base.html:100 .\templates\base.html:167
-#: .\templates\base.html:294 .\templates\home.html:37
+#: .\templates\base.html:100 .\templates\base.html:173
+#: .\templates\base.html:300 .\templates\home.html:37
 msgid "درباره ما"
 msgstr "من نحن"
 
-#: .\templates\base.html:132 .\templates\base.html:203
+#: .\templates\base.html:132
+msgid "خروج"
+msgstr "الخروج"
+
+#: .\templates\base.html:136 .\templates\base.html:209
 msgid "ورود"
 msgstr "تسجيل الدخول"
 
-#: .\templates\base.html:149
+#: .\templates\base.html:155
 msgid "منوی نکتار"
 msgstr "قائمة نكتار"
 
-#: .\templates\base.html:171
+#: .\templates\base.html:177
 msgid "تغییر زبان"
 msgstr "تغيير اللغة"
 
-#: .\templates\base.html:183
+#: .\templates\base.html:189
 msgid "ورود / ثبت‌نام"
 msgstr "تسجيل الدخول / إنشاء حساب"
 
-#: .\templates\base.html:216 .\templates\orders\checkout.html:12
+#: .\templates\base.html:222 .\templates\orders\checkout.html:12
 msgid "سبد خرید"
 msgstr "سلة المشتريات"
 
-#: .\templates\base.html:220 .\templates\base.html:451
+#: .\templates\base.html:226 .\templates\base.html:457
 msgid "سبد خرید خالی است"
 msgstr "سلة المشتريات فارغة"
 
-#: .\templates\base.html:223
+#: .\templates\base.html:229
 msgid "تسویه حساب"
 msgstr "الدفع"
 
-#: .\templates\base.html:248
+#: .\templates\base.html:254
 msgid "نکتار"
 msgstr "نكتار"
 
-#: .\templates\base.html:252
+#: .\templates\base.html:258
 msgid ""
 "نکتار، پلی است میان نخلستان‌های جنوب و کندوهای کوهستان با سفره شما. ما "
 "متعهدیم که طعم واقعی طبیعت را بدون واسطه و با بالاترین کیفیت به دست شما "
@@ -247,55 +252,55 @@ msgstr ""
 "مائدتكم. نحن ملتزمون بتوصيل الطعم الحقيقي للطبيعة إليكم دون وسطاء وبأعلى "
 "جودة."
 
-#: .\templates\base.html:274
+#: .\templates\base.html:280
 msgid "دسترسی سریع"
 msgstr "الوصول السريع"
 
-#: .\templates\base.html:279
+#: .\templates\base.html:285
 msgid "صفحه اصلی"
 msgstr "الصفحة الرئيسية"
 
-#: .\templates\base.html:284
+#: .\templates\base.html:290
 msgid "فروشگاه محصولات"
 msgstr "متجر المنتجات"
 
-#: .\templates\base.html:289
+#: .\templates\base.html:295
 msgid "بلاگ آموزشی"
 msgstr "مدونة تعليمية"
 
-#: .\templates\base.html:303
+#: .\templates\base.html:309
 msgid "خدمات مشتریان"
 msgstr "خدمة العملاء"
 
-#: .\templates\base.html:308
+#: .\templates\base.html:314
 msgid "سوالات متداول"
 msgstr "الأسئلة الشائعة"
 
-#: .\templates\base.html:313
+#: .\templates\base.html:319
 msgid "رویه ارسال سفارش"
 msgstr "سياسة الشحن"
 
-#: .\templates\base.html:318
+#: .\templates\base.html:324
 msgid "حریم خصوصی"
 msgstr "الخصوصية"
 
-#: .\templates\base.html:323
+#: .\templates\base.html:329
 msgid "تماس با ما"
 msgstr "اتصل بنا"
 
-#: .\templates\base.html:330
+#: .\templates\base.html:336
 msgid "همراه نکتار باشید"
 msgstr "كن مع نكتار"
 
-#: .\templates\base.html:331
+#: .\templates\base.html:337
 msgid "با عضویت در خبرنامه از تخفیف‌های ویژه باخبر شوید."
 msgstr "اشترك في النشرة الإخبارية لتصلك العروض الخاصة."
 
-#: .\templates\base.html:334
+#: .\templates\base.html:340
 msgid "ایمیل شما..."
 msgstr "بريدك الإلكتروني..."
 
-#: .\templates\base.html:362
+#: .\templates\base.html:368
 msgid "© 2025 تمامی حقوق مادی و معنوی برای فروشگاه نکتار محفوظ است."
 msgstr "© 2025 جميع الحقوق محفوظة لمتجر نكتار."
 
