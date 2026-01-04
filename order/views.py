@@ -93,9 +93,9 @@ def capture_paypal_order(request, order_id):
         order.status = "paid"
         order.save()
         send_invoice_email(order)
-        return JsonResponse({"success": True})
+        return JsonResponse({"success": True}, status=200)
 
-    return JsonResponse({"success": False})
+    return JsonResponse({"success": False}, status=400)
 
 
 def payment_success(request):
