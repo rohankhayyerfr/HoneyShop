@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-04 13:07+0200\n"
+"POT-Creation-Date: 2026-01-04 17:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: ROHAN KHAYYER <ROHANKHAYYERDEV@GMAIL.COM>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,28 +30,12 @@ msgstr ""
 msgid "Arabic"
 msgstr ""
 
-#: .\templates\404.html:28
-msgid "کندو خالیه!"
-msgstr ""
-
-#: .\templates\404.html:33
-msgid "مسیر رو اشتباه پرواز کردی!"
-msgstr ""
-
-#: .\templates\404.html:35
-msgid "صفحه ایی که دنبالش میگردی یا وجود نداره یا درحال ساخته! ولی نگران نباش "
-msgstr ""
-
-#: .\templates\404.html:50 .\templates\accounts\login.html:22
-msgid "بازگشت به خانه"
-msgstr ""
-
-#: .\templates\404.html:53 .\templates\home.html:36
-msgid "مشاهده محصولات"
-msgstr ""
-
 #: .\templates\accounts\login.html:7
 msgid "ورود به حساب کاربری | نکتار"
+msgstr ""
+
+#: .\templates\accounts\login.html:22
+msgid "بازگشت به خانه"
 msgstr ""
 
 #: .\templates\accounts\login.html:31
@@ -63,6 +47,7 @@ msgid "برای دسترسی به سفارشات خود وارد شوید."
 msgstr ""
 
 #: .\templates\accounts\login.html:42 .\templates\accounts\register.html:46
+#: .\templates\accounts\register.html:51
 msgid "نام کاربری"
 msgstr ""
 
@@ -144,8 +129,7 @@ msgstr ""
 msgid "مثال: علی محمدی"
 msgstr ""
 
-#: .\templates\accounts\register.html:51 .\templates\accounts\register.html:55
-#: .\templates\accounts\register.html:60
+#: .\templates\accounts\register.html:55 .\templates\accounts\register.html:60
 msgid "ایمیل"
 msgstr ""
 
@@ -356,6 +340,66 @@ msgstr ""
 msgid "آیا از حذف این محصول مطمئن هستید؟"
 msgstr ""
 
+#: .\templates\faq.html:10
+msgid "چطور می‌توانیم کمکتان کنیم؟"
+msgstr ""
+
+#: .\templates\faq.html:11
+msgid "پاسخ پرتکرارترین سوالات شما اینجاست"
+msgstr ""
+
+#: .\templates\faq.html:14
+msgid "جستجو در سوالات (مثلاً: نحوه ارسال)"
+msgstr ""
+
+#: .\templates\faq.html:26
+msgid "ارسال و تحویل"
+msgstr ""
+
+#: .\templates\faq.html:29
+msgid "کیفیت محصولات"
+msgstr ""
+
+#: .\templates\faq.html:30
+msgid "عودت و مرجوعی"
+msgstr ""
+
+#: .\templates\faq.html:31
+msgid "حساب کاربری"
+msgstr ""
+
+#: .\templates\faq.html:36
+msgid "پاسخ خود را نیافتید؟"
+msgstr ""
+
+#: .\templates\faq.html:37
+msgid "کارشناسان ما همه روزه از ساعت ۹ تا ۱۷ آماده پاسخگویی هستند."
+msgstr ""
+
+#: .\templates\faq.html:50
+msgid "ارسال و تحویل سفارش"
+msgstr ""
+
+#: .\templates\faq.html:56
+msgid "سفارش‌ها چند روزه به دستم می‌رسند؟"
+msgstr ""
+
+#: .\templates\faq.html:61
+msgid ""
+"                                    سفارش‌های تهران در صورت ثبت قبل از ساعت "
+"۱۲، همان روز و نهایتاً تا ۲۴ ساعت کاری تحویل داده می‌شوند. سفارش‌های شهرستان از "
+"طریق پست پیشتاز یا تیپاکس ارسال شده و معمولاً بین ۲ تا ۴ روز کاری زمان "
+"می‌برد.\n"
+msgstr ""
+
+#: .\templates\faq.html:69 .\templates\faq.html:90
+msgid "هزینه ارسال چقدر است؟"
+msgstr ""
+
+#: .\templates\faq.html:84
+msgid "کیفیت و اصالت محصولات"
+msgstr ""
+
 #: .\templates\home.html:8
 msgid "خرید عسل طبیعی و خرمای نکتار | ارسال سریع"
 msgstr ""
@@ -386,6 +430,10 @@ msgstr ""
 msgid ""
 "عسل ۱۰۰٪ طبیعی و خرمای نکتار تازه، برداشت مستقیم از تولیدکنندگان معتبر، بدون "
 "واسطه و با قیمت منصفانه."
+msgstr ""
+
+#: .\templates\home.html:36
+msgid "مشاهده محصولات"
 msgstr ""
 
 #: .\templates\home.html:52

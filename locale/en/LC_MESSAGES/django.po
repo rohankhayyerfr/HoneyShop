@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-04 13:07+0200\n"
+"POT-Creation-Date: 2026-01-04 17:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: ROHAN KHAYYER <ROHANKHAYYERDEV@GMAIL.COM>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,32 +30,13 @@ msgstr "English"
 msgid "Arabic"
 msgstr "Arabic"
 
-#: .\templates\404.html:28
-msgid "کندو خالیه!"
-msgstr "The hive is empty!"
-
-
-#: .\templates\404.html:33
-msgid "مسیر رو اشتباه پرواز کردی!"
-msgstr "You flew the wrong route!"
-
-
-#: .\templates\404.html:35
-msgid "صفحه ایی که دنبالش میگردی یا وجود نداره یا درحال ساخته! ولی نگران نباش "
-msgstr "The page you are looking for does not exist or is under construction! But don’t worry."
-
-
-#: .\templates\404.html:50 .\templates\accounts\login.html:22
-msgid "بازگشت به خانه"
-msgstr "Back to home"
-
-#: .\templates\404.html:53 .\templates\home.html:36
-msgid "مشاهده محصولات"
-msgstr "View Products"
-
 #: .\templates\accounts\login.html:7
 msgid "ورود به حساب کاربری | نکتار"
 msgstr "Sign in | Nektar"
+
+#: .\templates\accounts\login.html:22
+msgid "بازگشت به خانه"
+msgstr "Back to home"
 
 #: .\templates\accounts\login.html:31
 msgid "خوش آمدید"
@@ -66,6 +47,7 @@ msgid "برای دسترسی به سفارشات خود وارد شوید."
 msgstr "Sign in to track your order"
 
 #: .\templates\accounts\login.html:42 .\templates\accounts\register.html:46
+#: .\templates\accounts\register.html:51
 msgid "نام کاربری"
 msgstr "Username"
 
@@ -149,8 +131,7 @@ msgstr "Full Name"
 msgid "مثال: علی محمدی"
 msgstr "Example: John Smith"
 
-#: .\templates\accounts\register.html:51 .\templates\accounts\register.html:55
-#: .\templates\accounts\register.html:60
+#:.\templates\accounts\register.html:60
 msgid "ایمیل"
 msgstr "Your Email"
 
@@ -366,6 +347,78 @@ msgstr "Back to home"
 msgid "آیا از حذف این محصول مطمئن هستید؟"
 msgstr "Do you want to remove this product?"
 
+#: .\templates\faq.html:10
+msgid "چطور می‌توانیم کمکتان کنیم؟"
+msgstr ""
+
+#: .\templates\faq.html:11
+msgid "پاسخ پرتکرارترین سوالات شما اینجاست"
+msgstr ""
+
+#: .\templates\faq.html:14
+msgid "جستجو در سوالات (مثلاً: نحوه ارسال)"
+msgstr ""
+
+#: .\templates\faq.html:26
+#, fuzzy
+#| msgid "ارسال سریع"
+msgid "ارسال و تحویل"
+msgstr "Fast Delivery"
+
+#: .\templates\faq.html:29
+#, fuzzy
+#| msgid "محصولات"
+msgid "کیفیت محصولات"
+msgstr "Products"
+
+#: .\templates\faq.html:30
+msgid "عودت و مرجوعی"
+msgstr ""
+
+#: .\templates\faq.html:31
+#, fuzzy
+#| msgid "ایجاد حساب کاربری"
+msgid "حساب کاربری"
+msgstr "Register"
+
+#: .\templates\faq.html:36
+msgid "پاسخ خود را نیافتید؟"
+msgstr ""
+
+#: .\templates\faq.html:37
+msgid "کارشناسان ما همه روزه از ساعت ۹ تا ۱۷ آماده پاسخگویی هستند."
+msgstr ""
+
+#: .\templates\faq.html:50
+#, fuzzy
+#| msgid "رویه ارسال سفارش"
+msgid "ارسال و تحویل سفارش"
+msgstr "How we will send you?"
+
+#: .\templates\faq.html:56
+msgid "سفارش‌ها چند روزه به دستم می‌رسند؟"
+msgstr ""
+
+#: .\templates\faq.html:61
+msgid ""
+"                                    سفارش‌های تهران در صورت ثبت قبل از ساعت "
+"۱۲، همان روز و نهایتاً تا ۲۴ ساعت کاری تحویل داده می‌شوند. سفارش‌های شهرستان از "
+"طریق پست پیشتاز یا تیپاکس ارسال شده و معمولاً بین ۲ تا ۴ روز کاری زمان "
+"می‌برد.\n"
+msgstr ""
+
+#: .\templates\faq.html:69 .\templates\faq.html:90
+#, fuzzy
+#| msgid "هزینه ارسال"
+msgid "هزینه ارسال چقدر است؟"
+msgstr "Shipping Fee"
+
+#: .\templates\faq.html:84
+#, fuzzy
+#| msgid "فروشگاه محصولات"
+msgid "کیفیت و اصالت محصولات"
+msgstr "Shop"
+
 #: .\templates\home.html:8
 msgid "خرید عسل طبیعی و خرمای نکتار | ارسال سریع"
 msgstr "Buy Natural Honey & Nectar Dates | Fast Delivery"
@@ -401,6 +454,10 @@ msgid ""
 msgstr ""
 "100% natural honey and fresh nectar dates, harvested directly from trusted "
 "producers, without intermediaries, at fair prices."
+
+#: .\templates\home.html:36
+msgid "مشاهده محصولات"
+msgstr "View Products"
 
 #: .\templates\home.html:52
 msgid "کاملاً طبیعی"
@@ -521,42 +578,36 @@ msgstr "Cancel and Return"
 msgid "پرداخت ناموفق بود"
 msgstr "Payment was unsuccessful"
 
-
 #: .\templates\orders\payment_failed.html:23
 msgid ""
 "متاسفانه در پردازش پرداخت مشکلی پیش آمد. مبلغی از حساب شما کسر نشده است."
-msgstr "Unfortunately, there was a problem processing the payment. No amount has been deducted from your account."
-
+msgstr ""
+"Unfortunately, there was a problem processing the payment. No amount has "
+"been deducted from your account."
 
 #: .\templates\orders\payment_failed.html:29
 msgid "دلیل احتمالی:"
 msgstr "Possible reason:"
 
-
 #: .\templates\orders\payment_failed.html:32
 msgid "اختلال در ارتباط با درگاه بانکی"
 msgstr "Disruption in connection with the bank gateway"
-
 
 #: .\templates\orders\payment_failed.html:33
 msgid "انصراف از پرداخت توسط کاربر"
 msgstr "Payment cancelled by the user"
 
-
 #: .\templates\orders\payment_failed.html:34
 msgid "عدم موجودی کافی یا نامعتبر بودن کارت"
 msgstr "Insufficient balance or invalid card"
-
 
 #: .\templates\orders\payment_failed.html:41
 msgid "تلاش مجدد برای پرداخت"
 msgstr "Retry Payment"
 
-
 #: .\templates\orders\payment_failed.html:44
 msgid "نیاز به راهنمایی دارم / تماس با پشتیبانی"
 msgstr "I need help / Contact support"
-
 
 #: .\templates\orders\payment_success.html:20
 msgid "پرداخت با موفقیت انجام شد!"
@@ -566,13 +617,13 @@ msgstr "Payment was successful!"
 msgid ""
 "سفارش شما ثبت شد و به زودی پردازش خواهد شد. جزئیات سفارش به ایمیل شما ارسال "
 "گردید."
-msgstr "Your order has been placed and will be processed soon. The order details have been sent to your email."
-
+msgstr ""
+"Your order has been placed and will be processed soon. The order details "
+"have been sent to your email."
 
 #: .\templates\orders\payment_success.html:26
 msgid "کد رهگیری:"
 msgstr "Tracking code:"
-
 
 #: .\templates\orders\payment_success.html:32
 msgid "پیگیری سفارش"
@@ -625,6 +676,18 @@ msgstr ""
 #: .\templates\products\list.html:96
 msgid "ناموجود"
 msgstr "Out of Stock"
+
+#~ msgid "کندو خالیه!"
+#~ msgstr "The hive is empty!"
+
+#~ msgid "مسیر رو اشتباه پرواز کردی!"
+#~ msgstr "You flew the wrong route!"
+
+#~ msgid ""
+#~ "صفحه ایی که دنبالش میگردی یا وجود نداره یا درحال ساخته! ولی نگران نباش "
+#~ msgstr ""
+#~ "The page you are looking for does not exist or is under construction! But "
+#~ "don’t worry."
 
 #~ msgid "تومان"
 #~ msgstr "USD"

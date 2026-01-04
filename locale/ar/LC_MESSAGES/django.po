@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-04 13:07+0200\n"
+"POT-Creation-Date: 2026-01-04 17:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: ROHAN KHAYYER <ROHANKHAYYERDEV@GMAIL.COM>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,32 +31,13 @@ msgstr "الإنجليزية"
 msgid "Arabic"
 msgstr "العربية"
 
-#: .\templates\404.html:28
-msgid "کندو خالیه!"
-msgstr "الخليّة فارغة!"
-
-
-#: .\templates\404.html:33
-msgid "مسیر رو اشتباه پرواز کردی!"
-msgstr "لقد حلّقت في المسار الخاطئ!"
-
-
-#: .\templates\404.html:35
-msgid "صفحه ایی که دنبالش میگردی یا وجود نداره یا درحال ساخته! ولی نگران نباش "
-msgstr "الصفحة التي تبحث عنها غير موجودة أو قيد الإنشاء! لكن لا تقلق"
-
-
-#: .\templates\404.html:50 .\templates\accounts\login.html:22
-msgid "بازگشت به خانه"
-msgstr "العودة إلى الصفحة الرئيسية"
-
-#: .\templates\404.html:53 .\templates\home.html:36
-msgid "مشاهده محصولات"
-msgstr "عرض المنتجات"
-
 #: .\templates\accounts\login.html:7
 msgid "ورود به حساب کاربری | نکتار"
 msgstr "تسجيل الدخول | نكتار"
+
+#: .\templates\accounts\login.html:22
+msgid "بازگشت به خانه"
+msgstr "العودة إلى الصفحة الرئيسية"
 
 #: .\templates\accounts\login.html:31
 msgid "خوش آمدید"
@@ -67,6 +48,7 @@ msgid "برای دسترسی به سفارشات خود وارد شوید."
 msgstr "قم بتسجيل الدخول للوصول إلى طلباتك."
 
 #: .\templates\accounts\login.html:42 .\templates\accounts\register.html:46
+#: .\templates\accounts\register.html:51
 msgid "نام کاربری"
 msgstr "اسم المستخدم"
 
@@ -150,8 +132,7 @@ msgstr "الاسم الكامل"
 msgid "مثال: علی محمدی"
 msgstr "مثال: علي محمدي"
 
-#: .\templates\accounts\register.html:51 .\templates\accounts\register.html:55
-#: .\templates\accounts\register.html:60
+#: .\templates\accounts\register.html:55 .\templates\accounts\register.html:60
 msgid "ایمیل"
 msgstr "بريدك الإلكتروني..."
 
@@ -343,7 +324,6 @@ msgstr "تكلفة الشحن"
 msgid "مبلغ قابل پرداخت"
 msgstr "المبلغ المستحق للدفع"
 
-
 #: .\templates\cart\cart.html:100
 msgid "ادامه جهت تسویه حساب"
 msgstr "الدفع"
@@ -367,6 +347,78 @@ msgstr "العودة إلى الصفحة الرئيسية"
 #: .\templates\cart\cart.html:154
 msgid "آیا از حذف این محصول مطمئن هستید؟"
 msgstr "هل تريد حذف هذا المنتج؟"
+
+#: .\templates\faq.html:10
+msgid "چطور می‌توانیم کمکتان کنیم؟"
+msgstr ""
+
+#: .\templates\faq.html:11
+msgid "پاسخ پرتکرارترین سوالات شما اینجاست"
+msgstr ""
+
+#: .\templates\faq.html:14
+msgid "جستجو در سوالات (مثلاً: نحوه ارسال)"
+msgstr ""
+
+#: .\templates\faq.html:26
+#, fuzzy
+#| msgid "ارسال سریع"
+msgid "ارسال و تحویل"
+msgstr "توصيل سريع"
+
+#: .\templates\faq.html:29
+#, fuzzy
+#| msgid "محصولات"
+msgid "کیفیت محصولات"
+msgstr "المنتجات"
+
+#: .\templates\faq.html:30
+msgid "عودت و مرجوعی"
+msgstr ""
+
+#: .\templates\faq.html:31
+#, fuzzy
+#| msgid "ایجاد حساب کاربری"
+msgid "حساب کاربری"
+msgstr "إنشاء حساب"
+
+#: .\templates\faq.html:36
+msgid "پاسخ خود را نیافتید؟"
+msgstr ""
+
+#: .\templates\faq.html:37
+msgid "کارشناسان ما همه روزه از ساعت ۹ تا ۱۷ آماده پاسخگویی هستند."
+msgstr ""
+
+#: .\templates\faq.html:50
+#, fuzzy
+#| msgid "رویه ارسال سفارش"
+msgid "ارسال و تحویل سفارش"
+msgstr "سياسة الشحن"
+
+#: .\templates\faq.html:56
+msgid "سفارش‌ها چند روزه به دستم می‌رسند؟"
+msgstr ""
+
+#: .\templates\faq.html:61
+msgid ""
+"                                    سفارش‌های تهران در صورت ثبت قبل از ساعت "
+"۱۲، همان روز و نهایتاً تا ۲۴ ساعت کاری تحویل داده می‌شوند. سفارش‌های شهرستان از "
+"طریق پست پیشتاز یا تیپاکس ارسال شده و معمولاً بین ۲ تا ۴ روز کاری زمان "
+"می‌برد.\n"
+msgstr ""
+
+#: .\templates\faq.html:69 .\templates\faq.html:90
+#, fuzzy
+#| msgid "هزینه ارسال"
+msgid "هزینه ارسال چقدر است؟"
+msgstr "تكلفة الشحن"
+
+#: .\templates\faq.html:84
+#, fuzzy
+#| msgid "فروشگاه محصولات"
+msgid "کیفیت و اصالت محصولات"
+msgstr "متجر المنتجات"
 
 #: .\templates\home.html:8
 msgid "خرید عسل طبیعی و خرمای نکتار | ارسال سریع"
@@ -403,6 +455,10 @@ msgid ""
 msgstr ""
 "عسل طبيعي 100٪ وتمور نكتار طازجة، حصاد مباشر من المنتجين الموثوقين، بدون "
 "وسطاء وبسعر عادل."
+
+#: .\templates\home.html:36
+msgid "مشاهده محصولات"
+msgstr "عرض المنتجات"
 
 #: .\templates\home.html:52
 msgid "کاملاً طبیعی"
@@ -455,7 +511,6 @@ msgstr "معلومات الشحن"
 #: .\templates\orders\checkout.html:19
 msgid "پرداخت"
 msgstr "الدفع"
-
 
 #: .\templates\orders\checkout.html:29
 msgid "جزئیات ارسال سفارش"
@@ -521,27 +576,22 @@ msgstr "إلغاء والعودة"
 msgid "پرداخت ناموفق بود"
 msgstr "فشل الدفع"
 
-
 #: .\templates\orders\payment_failed.html:23
 msgid ""
 "متاسفانه در پردازش پرداخت مشکلی پیش آمد. مبلغی از حساب شما کسر نشده است."
 msgstr "لسوء الحظ، حدثت مشكلة أثناء معالجة الدفع. لم يتم خصم أي مبلغ من حسابك."
 
-
 #: .\templates\orders\payment_failed.html:29
 msgid "دلیل احتمالی:"
 msgstr "السبب المحتمل:"
-
 
 #: .\templates\orders\payment_failed.html:32
 msgid "اختلال در ارتباط با درگاه بانکی"
 msgstr "خلل في الاتصال ببوابة الدفع البنكية"
 
-
 #: .\templates\orders\payment_failed.html:33
 msgid "انصراف از پرداخت توسط کاربر"
 msgstr "إلغاء الدفع بواسطة المستخدم"
-
 
 #: .\templates\orders\payment_failed.html:34
 msgid "عدم موجودی کافی یا نامعتبر بودن کارت"
@@ -551,37 +601,33 @@ msgstr "عدم كفاية الرصيد أو عدم صلاحية البطاقة"
 msgid "تلاش مجدد برای پرداخت"
 msgstr "المحاولة مرة أخرى للدفع"
 
-
 #: .\templates\orders\payment_failed.html:44
 msgid "نیاز به راهنمایی دارم / تماس با پشتیبانی"
 msgstr "أحتاج إلى مساعدة / الاتصال بالدعم"
-
 
 #: .\templates\orders\payment_success.html:20
 msgid "پرداخت با موفقیت انجام شد!"
 msgstr "تم الدفع بنجاح!"
 
-
 #: .\templates\orders\payment_success.html:22
 msgid ""
 "سفارش شما ثبت شد و به زودی پردازش خواهد شد. جزئیات سفارش به ایمیل شما ارسال "
 "گردید."
-msgstr "تم تسجيل طلبك وسيتم معالجته قريبًا. تم إرسال تفاصيل الطلب إلى بريدك الإلكتروني."
+msgstr ""
+"تم تسجيل طلبك وسيتم معالجته قريبًا. تم إرسال تفاصيل الطلب إلى بريدك "
+"الإلكتروني."
 
 #: .\templates\orders\payment_success.html:26
 msgid "کد رهگیری:"
 msgstr "رمز التتبع:"
 
-
 #: .\templates\orders\payment_success.html:32
 msgid "پیگیری سفارش"
 msgstr "متابعة الطلب"
 
-
 #: .\templates\orders\payment_success.html:35
 msgid "بازگشت به صفحه اصلی"
 msgstr "العودة إلى الصفحة الرئيسية"
-
 
 #: .\templates\products\detail.html:304
 msgid "لطفاً یک گزینه را انتخاب کنید"
@@ -626,6 +672,16 @@ msgstr ""
 #: .\templates\products\list.html:96
 msgid "ناموجود"
 msgstr "غير متوفر"
+
+#~ msgid "کندو خالیه!"
+#~ msgstr "الخليّة فارغة!"
+
+#~ msgid "مسیر رو اشتباه پرواز کردی!"
+#~ msgstr "لقد حلّقت في المسار الخاطئ!"
+
+#~ msgid ""
+#~ "صفحه ایی که دنبالش میگردی یا وجود نداره یا درحال ساخته! ولی نگران نباش "
+#~ msgstr "الصفحة التي تبحث عنها غير موجودة أو قيد الإنشاء! لكن لا تقلق"
 
 #~ msgid "تومان"
 #~ msgstr "USD"
