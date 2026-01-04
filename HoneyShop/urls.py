@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 import store
 from django.views.static import serve
-from store.views import custom_404
+# from store.views import custom_404
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import handler404
 from HoneyShop import settings
@@ -30,7 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-handler404 = 'store.views.custom_404'
+# handler404 = 'store.views.custom_404'
 urlpatterns += i18n_patterns(
 path('', include('store.urls')),
     path('accounts/', include('accounts.urls')),
