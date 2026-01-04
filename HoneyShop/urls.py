@@ -36,7 +36,6 @@ path('', include('store.urls')),
     path('accounts/', include('accounts.urls')),
     path('cart/', include('cart.urls')),
     path('orders/', include('order.urls')),
-    path('test-404/', lambda request: (_ for _ in ()).throw(Exception("Test 404"))),
 
 
 )
