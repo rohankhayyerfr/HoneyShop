@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from paypalcheckoutsdk.orders import OrdersCreateRequest, OrdersCaptureRequest
-
+from .email_utils import send_invoice_email
 from HoneyShop import settings
 from cart.models import Cart, CartItem
 from .models import Order, OrderItem
@@ -92,7 +92,7 @@ def capture_paypal_order(request, order_id):
     if response.result.status == "COMPLETED":
         order.status = "paid"
         order.save()
-
+        send_invoice_email(order)
         return JsonResponse({"success": True})
 
     return JsonResponse({"success": False})
