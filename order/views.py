@@ -76,26 +76,37 @@ def create_paypal_order(request, order_id):
     return JsonResponse({"id": response.result.id})
 
 
+import json
 
-@csrf_exempt
+
+@csrf_exempt  # اگر توکن را در هدر می‌فرستید، گاهی این لازم نیست اما برای اطمینان فعلا بماند
 def capture_paypal_order(request, order_id):
     if request.method != "POST":
-        return JsonResponse({"success": False}, status=400)
+        return JsonResponse({"success": False, "error": "Invalid method"}, status=400)
 
-    paypal_order_id = request.POST.get("paypal_order_id")
-    order = Order.objects.get(id=order_id)
+    try:
+        # خواندن داده از JSON
+        data = json.loads(request.body)
+        paypal_order_id = data.get("paypal_order_id")
 
-    from .paypal import paypal_client
-    request_capture = OrdersCaptureRequest(paypal_order_id)
-    response = paypal_client().execute(request_capture)
+        order = Order.objects.get(id=order_id)
 
-    if response.result.status == "COMPLETED":
-        order.status = "paid"
-        order.save()
-        send_invoice_email(order)
-        return JsonResponse({"success": True}, status=200)
+        from .paypal import paypal_client
+        request_capture = OrdersCaptureRequest(paypal_order_id)
+        response = paypal_client().execute(request_capture)
 
-    return JsonResponse({"success": False}, status=400)
+        # بررسی وضعیت COMPLETED یا APPROVED
+        if response.result.status == "COMPLETED":
+            order.status = "paid"
+            order.save()
+            # send_invoice_email(order) # فعلاً کامنت کنید تا اگر اینجا خطا داشت متوجه شوید
+            return JsonResponse({"success": True}, status=200)
+        else:
+            return JsonResponse({"success": False, "error": "Status not completed"}, status=400)
+
+    except Exception as e:
+        print(f"Error: {e}")  # حتما در کنسول سرور چک کنید چه خطایی می‌دهد
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
 
 
 def payment_success(request):

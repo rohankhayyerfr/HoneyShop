@@ -90,25 +90,27 @@
                 });
         },
         onApprove: function (data, actions) {
-            // نمایش لودینگ تمام صفحه یا غیرفعال کردن صفحه هنگام تایید
             document.body.style.cursor = 'wait';
 
             return fetch("{% url 'capture_paypal_order' order.id %}", {
                 method: "POST",
                 headers: {
                     "X-CSRFToken": "{{ csrf_token }}",
-                    "Content-Type": "application/x-www-form-urlencoded" // معمولا برای ارسال فرم دیتا نیاز است
+                    "Content-Type": "application/json" // تغییر به JSON
                 },
-                body: new URLSearchParams({
+                body: JSON.stringify({
                     paypal_order_id: data.orderID
                 })
             }).then((response) => {
                 if (response.ok) {
                     window.location.href = "{% url 'payment_success' %}";
                 } else {
-                    console.error('Capture Error');
-                    window.location.href = "{% url 'payment_failed' %}";
+                    // برای دیباگ بهتر:
+                    return response.json().then(err => { throw err; });
                 }
+            }).catch(err => {
+                console.error('Capture Error:', err);
+                window.location.href = "{% url 'payment_failed' %}";
             });
         },
         onError: function (err) {
