@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-26 16:04+0200\n"
+"POT-Creation-Date: 2026-01-04 13:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: ROHAN KHAYYER <ROHANKHAYYERDEV@GMAIL.COM>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,13 +31,32 @@ msgstr "الإنجليزية"
 msgid "Arabic"
 msgstr "العربية"
 
+#: .\templates\404.html:28
+msgid "کندو خالیه!"
+msgstr "الخليّة فارغة!"
+
+
+#: .\templates\404.html:33
+msgid "مسیر رو اشتباه پرواز کردی!"
+msgstr "لقد حلّقت في المسار الخاطئ!"
+
+
+#: .\templates\404.html:35
+msgid "صفحه ایی که دنبالش میگردی یا وجود نداره یا درحال ساخته! ولی نگران نباش "
+msgstr "الصفحة التي تبحث عنها غير موجودة أو قيد الإنشاء! لكن لا تقلق"
+
+
+#: .\templates\404.html:50 .\templates\accounts\login.html:22
+msgid "بازگشت به خانه"
+msgstr "العودة إلى الصفحة الرئيسية"
+
+#: .\templates\404.html:53 .\templates\home.html:36
+msgid "مشاهده محصولات"
+msgstr "عرض المنتجات"
+
 #: .\templates\accounts\login.html:7
 msgid "ورود به حساب کاربری | نکتار"
 msgstr "تسجيل الدخول | نكتار"
-
-#: .\templates\accounts\login.html:22
-msgid "بازگشت به خانه"
-msgstr "العودة إلى الصفحة الرئيسية"
 
 #: .\templates\accounts\login.html:31
 msgid "خوش آمدید"
@@ -201,7 +220,7 @@ msgid "مزایا"
 msgstr "المزايا"
 
 #: .\templates\base.html:100 .\templates\base.html:167
-#: .\templates\base.html:288 .\templates\home.html:37
+#: .\templates\base.html:294 .\templates\home.html:37
 msgid "درباره ما"
 msgstr "من نحن"
 
@@ -225,7 +244,7 @@ msgstr "تسجيل الدخول / إنشاء حساب"
 msgid "سبد خرید"
 msgstr "سلة المشتريات"
 
-#: .\templates\base.html:220 .\templates\base.html:445
+#: .\templates\base.html:220 .\templates\base.html:451
 msgid "سبد خرید خالی است"
 msgstr "سلة المشتريات فارغة"
 
@@ -247,55 +266,55 @@ msgstr ""
 "مائدتكم. نحن ملتزمون بتوصيل الطعم الحقيقي للطبيعة إليكم دون وسطاء وبأعلى "
 "جودة."
 
-#: .\templates\base.html:268
+#: .\templates\base.html:274
 msgid "دسترسی سریع"
 msgstr "الوصول السريع"
 
-#: .\templates\base.html:273
+#: .\templates\base.html:279
 msgid "صفحه اصلی"
 msgstr "الصفحة الرئيسية"
 
-#: .\templates\base.html:278
+#: .\templates\base.html:284
 msgid "فروشگاه محصولات"
 msgstr "متجر المنتجات"
 
-#: .\templates\base.html:283
+#: .\templates\base.html:289
 msgid "بلاگ آموزشی"
 msgstr "مدونة تعليمية"
 
-#: .\templates\base.html:297
+#: .\templates\base.html:303
 msgid "خدمات مشتریان"
 msgstr "خدمة العملاء"
 
-#: .\templates\base.html:302
+#: .\templates\base.html:308
 msgid "سوالات متداول"
 msgstr "الأسئلة الشائعة"
 
-#: .\templates\base.html:307
+#: .\templates\base.html:313
 msgid "رویه ارسال سفارش"
 msgstr "سياسة الشحن"
 
-#: .\templates\base.html:312
+#: .\templates\base.html:318
 msgid "حریم خصوصی"
 msgstr "الخصوصية"
 
-#: .\templates\base.html:317
+#: .\templates\base.html:323
 msgid "تماس با ما"
 msgstr "اتصل بنا"
 
-#: .\templates\base.html:324
+#: .\templates\base.html:330
 msgid "همراه نکتار باشید"
 msgstr "كن مع نكتار"
 
-#: .\templates\base.html:325
+#: .\templates\base.html:331
 msgid "با عضویت در خبرنامه از تخفیف‌های ویژه باخبر شوید."
 msgstr "اشترك في النشرة الإخبارية لتصلك العروض الخاصة."
 
-#: .\templates\base.html:328
+#: .\templates\base.html:334
 msgid "ایمیل شما..."
 msgstr "بريدك الإلكتروني..."
 
-#: .\templates\base.html:356
+#: .\templates\base.html:362
 msgid "© 2025 تمامی حقوق مادی و معنوی برای فروشگاه نکتار محفوظ است."
 msgstr "© 2025 جميع الحقوق محفوظة لمتجر نكتار."
 
@@ -311,11 +330,9 @@ msgstr "ملخص الطلب:"
 msgid "قیمت کالاها"
 msgstr "سعر المنتجات"
 
-
 #: .\templates\cart\cart.html:78
 msgid "سود شما از خرید"
 msgstr "ربحك من الشراء"
-
 
 #: .\templates\cart\cart.html:84 .\templates\orders\checkout.html:95
 msgid "هزینه ارسال"
@@ -324,7 +341,8 @@ msgstr "تكلفة الشحن"
 #: .\templates\cart\cart.html:91 .\templates\orders\checkout.html:99
 #: .\templates\orders\payment.html:24
 msgid "مبلغ قابل پرداخت"
-msgstr ""
+msgstr "المبلغ المستحق للدفع"
+
 
 #: .\templates\cart\cart.html:100
 msgid "ادامه جهت تسویه حساب"
@@ -335,14 +353,12 @@ msgid " محاسبه هزینه ارسال در مرحله بعد انجام م�
 msgstr "سيتم احتساب تكلفة الشحن في الخطوة التالية."
 
 #: .\templates\cart\cart.html:116
-
 msgid "سبد خرید شما خالی است!"
 msgstr "سلة المشتريات فارغة"
 
 #: .\templates\cart\cart.html:117
 msgid "می‌توانید برای مشاهده محصولات به فروشگاه بروید."
 msgstr "يمكنك زيارة المتجر لعرض المنتجات."
-
 
 #: .\templates\cart\cart.html:119
 msgid "بازگشت به فروشگاه"
@@ -387,10 +403,6 @@ msgid ""
 msgstr ""
 "عسل طبيعي 100٪ وتمور نكتار طازجة، حصاد مباشر من المنتجين الموثوقين، بدون "
 "وسطاء وبسعر عادل."
-
-#: .\templates\home.html:36
-msgid "مشاهده محصولات"
-msgstr "عرض المنتجات"
 
 #: .\templates\home.html:52
 msgid "کاملاً طبیعی"
@@ -438,16 +450,16 @@ msgstr "بدأنا نشاطنا بهدف إيصال المنتجات الإير�
 
 #: .\templates\orders\checkout.html:16
 msgid "اطلاعات ارسال"
-msgstr ""
+msgstr "معلومات الشحن"
 
 #: .\templates\orders\checkout.html:19
 msgid "پرداخت"
-msgstr ""
+msgstr "الدفع"
+
 
 #: .\templates\orders\checkout.html:29
 msgid "جزئیات ارسال سفارش"
 msgstr "تفاصيل شحن الطلب"
-
 
 #: .\templates\orders\checkout.html:35
 msgid "مثلاً: علی رضایی"
@@ -465,21 +477,17 @@ msgstr "بريدك الإلكتروني..."
 msgid "آدرس دقیق پستی"
 msgstr "العنوان البريدي الكامل"
 
-
 #: .\templates\orders\checkout.html:54
 msgid "استان، شهر، خیابان، پلاک و واحد..."
 msgstr "المحافظة، المدينة، الشارع، رقم المبنى والوحدة..."
-
 
 #: .\templates\orders\checkout.html:62
 msgid "خلاصه سبد خرید"
 msgstr "ملخص سلة التسوق"
 
-
 #: .\templates\orders\checkout.html:85
 msgid "تعداد"
 msgstr "الكمية"
-
 
 #: .\templates\orders\checkout.html:109
 msgid "ادامه به درگاه پرداخت"
@@ -493,16 +501,13 @@ msgstr "دفع آمن عبر بوابة البنك"
 msgid "درگاه پرداخت امن"
 msgstr "بوابة دفع آمنة"
 
-
 #: .\templates\orders\payment.html:30
 msgid "شماره سفارش:"
 msgstr "رقم الطلب:"
 
-
 #: .\templates\orders\payment.html:36
 msgid "انتخاب روش پرداخت"
 msgstr "اختر طريقة الدفع"
-
 
 #: .\templates\orders\payment.html:48
 msgid "در حال اتصال به درگاه..."
@@ -511,6 +516,71 @@ msgstr "جارٍ الاتصال ببوابة الدفع..."
 #: .\templates\orders\payment.html:56
 msgid "انصراف و بازگشت"
 msgstr "إلغاء والعودة"
+
+#: .\templates\orders\payment_failed.html:21
+msgid "پرداخت ناموفق بود"
+msgstr "فشل الدفع"
+
+
+#: .\templates\orders\payment_failed.html:23
+msgid ""
+"متاسفانه در پردازش پرداخت مشکلی پیش آمد. مبلغی از حساب شما کسر نشده است."
+msgstr "لسوء الحظ، حدثت مشكلة أثناء معالجة الدفع. لم يتم خصم أي مبلغ من حسابك."
+
+
+#: .\templates\orders\payment_failed.html:29
+msgid "دلیل احتمالی:"
+msgstr "السبب المحتمل:"
+
+
+#: .\templates\orders\payment_failed.html:32
+msgid "اختلال در ارتباط با درگاه بانکی"
+msgstr "خلل في الاتصال ببوابة الدفع البنكية"
+
+
+#: .\templates\orders\payment_failed.html:33
+msgid "انصراف از پرداخت توسط کاربر"
+msgstr "إلغاء الدفع بواسطة المستخدم"
+
+
+#: .\templates\orders\payment_failed.html:34
+msgid "عدم موجودی کافی یا نامعتبر بودن کارت"
+msgstr "عدم كفاية الرصيد أو عدم صلاحية البطاقة"
+
+#: .\templates\orders\payment_failed.html:41
+msgid "تلاش مجدد برای پرداخت"
+msgstr "المحاولة مرة أخرى للدفع"
+
+
+#: .\templates\orders\payment_failed.html:44
+msgid "نیاز به راهنمایی دارم / تماس با پشتیبانی"
+msgstr "أحتاج إلى مساعدة / الاتصال بالدعم"
+
+
+#: .\templates\orders\payment_success.html:20
+msgid "پرداخت با موفقیت انجام شد!"
+msgstr "تم الدفع بنجاح!"
+
+
+#: .\templates\orders\payment_success.html:22
+msgid ""
+"سفارش شما ثبت شد و به زودی پردازش خواهد شد. جزئیات سفارش به ایمیل شما ارسال "
+"گردید."
+msgstr "تم تسجيل طلبك وسيتم معالجته قريبًا. تم إرسال تفاصيل الطلب إلى بريدك الإلكتروني."
+
+#: .\templates\orders\payment_success.html:26
+msgid "کد رهگیری:"
+msgstr "رمز التتبع:"
+
+
+#: .\templates\orders\payment_success.html:32
+msgid "پیگیری سفارش"
+msgstr "متابعة الطلب"
+
+
+#: .\templates\orders\payment_success.html:35
+msgid "بازگشت به صفحه اصلی"
+msgstr "العودة إلى الصفحة الرئيسية"
 
 
 #: .\templates\products\detail.html:304
@@ -525,37 +595,40 @@ msgstr "هذا الخيار غير متوفر"
 msgid "محصول به سبد خرید اضافه شد!"
 msgstr "تم إضافة المنتج إلى السلة!"
 
-#: .\templates\products\list.html:10
+#: .\templates\products\list.html:5
 msgid "محصولات نکتار"
 msgstr "منتجات نكتار"
 
-#: .\templates\products\list.html:11
+#: .\templates\products\list.html:7
 msgid "مجموعه‌ای از بهترین‌های طبیعت"
 msgstr "مجموعة من أفضل ما في الطبيعة"
 
-#: .\templates\products\list.html:21
+#: .\templates\products\list.html:19
 msgid "دسته‌بندی‌ها"
 msgstr "الفئات"
 
-#: .\templates\products\list.html:23
+#: .\templates\products\list.html:28
 msgid "عسل طبیعی"
 msgstr "عسل طبيعي"
 
-#: .\templates\products\list.html:24
+#: .\templates\products\list.html:37
 msgid "خرما و رطب"
 msgstr "التمر والرطب"
 
-#: .\templates\products\list.html:55
+#: .\templates\products\list.html:72
 msgid "افزودن به سبد خرید"
 msgstr "أضف إلى السلة"
 
-#: .\templates\products\list.html:71 .\templates\products\list.html:75
-msgid "تومان"
-msgstr "USD"
+#: .\templates\products\list.html:89 .\templates\products\list.html:93
+msgid "USD"
+msgstr ""
 
-#: .\templates\products\list.html:81
+#: .\templates\products\list.html:96
 msgid "ناموجود"
 msgstr "غير متوفر"
+
+#~ msgid "تومان"
+#~ msgstr "USD"
 
 #~ msgid "تخفیف"
 #~ msgstr "خصم"

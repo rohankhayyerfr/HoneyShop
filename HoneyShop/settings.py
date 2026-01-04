@@ -161,3 +161,12 @@ CART_SESSION_ID = 'cart'
 PAYPAL_CLIENT_ID = "ARHKtDnc60VUcYm4ltObRop2HH5jq3PMd_O-jf5W_RLvs0CK8Ly3mBcNxTxVlHiWdyMU4jDLUIFpN7Ys"
 PAYPAL_CLIENT_SECRET = "EMDzvsNmbDBu4YKhoaTGaUwoTtcDjDeTEPPaP1eWPjc4eT1Uemq6y9QWFS60bMG6u-Nu2frrQ8RYmhAk"
 PAYPAL_CURRENCY = "USD"
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = 'nectarsshops@gmail.com'
+EMAIL_HOST_PASSWORD = 'Nectarshops@1362'
