@@ -163,10 +163,10 @@ PAYPAL_CLIENT_SECRET = "EMDzvsNmbDBu4YKhoaTGaUwoTtcDjDeTEPPaP1eWPjc4eT1Uemq6y9QW
 PAYPAL_CURRENCY = "USD"
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
-EMAIL_HOST_USER = 'nectarsshops@gmail.com'
-EMAIL_HOST_PASSWORD = 'Nectarshops@1362'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+#
+# EMAIL_HOST_USER = 'nectarsshops@gmail.com'
+# EMAIL_HOST_PASSWORD = 'Nectarshops@1362'
