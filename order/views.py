@@ -108,6 +108,19 @@ def capture_paypal_order(request, order_id):
         print(f"Error: {e}")  # حتما در کنسول سرور چک کنید چه خطایی می‌دهد
         return JsonResponse({"success": False, "error": str(e)}, status=500)
 
+def tracking_order(request):
+    order = None
+    error = None
+
+    if request.method == "POST":
+        order_number = request.POST.get("order_number")
+
+        try:
+            order = Order.objects.get(id=order_number)
+        except Order.DoesNotExist:
+            error = "Order does not exist"
+
+    return render(request, 'orders/tracking.html', {'order': order, 'error': error})
 
 def payment_success(request):
     return render(request, 'orders/payment_success.html')

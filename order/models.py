@@ -10,6 +10,10 @@ class Order(models.Model):
         ('pending', 'Wating for payment'),
         ('paid', 'Paid'),
         ('failed', 'Failed'),
+        ('shipped', 'Product is Shipped'),
+        ('canceled', 'Product got Canceled'),
+        ('processing', 'Product is in Processing'),
+        ('delivered', 'Product is Delivered'),
     )
 
     user = models.ForeignKey(
